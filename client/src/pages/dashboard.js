@@ -7,15 +7,28 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 function Welcome() {
     return (
-        <Container fluid>
+        <Container fluid >
         <Row> 
-        <Col size="md-12">
+        <Col size="md-5">
             
-        <Jumbotron>
-
-        <Carousel>
-                <div>
-                    <img src="https://th.bing.com/th/id/Rf6fa29c13a30b7745a67db688219cf4a?rik=hxeaXSw6XjrcIw&riu=http%3a%2f%2fwww.dreamjobcoaching.com%2fwp-content%2fuploads%2f2014%2f09%2f9-step-job-searching-program.jpg&ehk=2jMp5Apvvwe3Odl6Z%2fFTNUT2EucKCV4RqSOHTQrK%2f28%3d&risl=&pid=ImgRaw"  />
+        <Carousel autoPlay width="100%" viewportWidth="24px" cellPadding={ 2 }  interval={800}>
+                <div >
+                <div class="container bg-secondary border border-dark rounded">
+                <div class="signup-content">
+                    <div class="signup-form ">
+                        <h1>Take control of your your job hunt.</h1> 
+                        <p>Organize your job search and 
+discover new opportunities, all in one 
+place. <a href="https://www.w3schools.com/">click her to learn more ...</a></p> 
+                    </div>       
+                    <div class="signup-image">
+                        <a href="/signup" class="btn btn-info">Sign-up</a>
+                    </div>
+                    <div class="signin-image">
+                        <a href="/login" class="btn btn-secondary">Login</a>
+                    </div>
+                </div>
+            </div>
                     <p className="legend">Legend 1</p>
                 </div>
                 <div>
@@ -27,27 +40,10 @@ function Welcome() {
                     <p className="legend">Legend 3</p>
                 </div>
             </Carousel>
-            <div class="container bg-secondary border border-dark rounded">
-                <div class="signup-content">
-                    <div class="signup-form ">
-                        <h1>Take control of your your job hunt.</h1> 
-                        <p>Organize your job search and 
-discover new opportunities, all in one 
-place. <a href="https://www.w3schools.com/">click her to learn more ...</a></p> 
-                    </div>
-                    
-                    <div class="signup-image">
-                        <a href="/signup" class="btn btn-info">Sign-up</a>
-                    </div>
-                    <div class="signin-image">
-                        <a href="/login" class="btn btn-secondary">Login</a>
-                    </div>
-                </div>
-            </div>
 
-        </Jumbotron>
         </Col>
       </Row>
+      
     </Container>
 );
 }
