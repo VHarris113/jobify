@@ -1,7 +1,7 @@
 {
-  "name": "jobify",
+  "name": "mern",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mern Demo",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -19,9 +19,11 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.1",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
-    "mongoose": "^5.3.16"
+    "react-responsive-carousel": "^3.2.18",
+    "react-router-dom": "^5.2.0"
   }
 }
