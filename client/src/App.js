@@ -23,7 +23,7 @@ function App() {
         <Route exact path="/upload" component={Upload} />
         <Route exact path="/gallery" component={Gallery} />
         
-        <Route component={NoMatch} />
+        {/* <Route component={NoMatch} /> */}
         </Switch>
       </div>
     </Router>
