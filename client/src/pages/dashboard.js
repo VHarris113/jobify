@@ -1,16 +1,18 @@
 
 import React, { Component } from 'react';
 import { Col, Row, Container } from "../components/Grid";
+import { Link, useParams } from "react-router-dom";
 import Jumbotron from "../components/Jumbotron";
 import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 function Welcome() {
     return (
+        
         <Container fluid >
         <Row> 
         <Col size="md-5">
-            
+        <Link to="/tracker">← Got to track from here for now</Link>
         <Carousel autoPlay width="100%" viewportWidth="24px" cellPadding={ 2 }  interval={800}>
                 <div >
                 <div class="container bg-secondary border border-dark rounded">
@@ -40,10 +42,8 @@ place. <a href="https://www.w3schools.com/">click her to learn more ...</a></p>
                     <p className="legend">Legend 3</p>
                 </div>
             </Carousel>
-
         </Col>
       </Row>
-      
     </Container>
 );
 }
