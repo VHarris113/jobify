@@ -1,4 +1,4 @@
-const { cloudinary } = require("./utils/cloudinary");
+const { cloudinary } = require("./utils/cloudinary.js");
 const express = require("express");
 const path = require("path");
 const logger = require("morgan");
@@ -12,7 +12,6 @@ const app = express();
 app.use(logger("dev"));
 // Define middleware here
 // Jackson added code
-
 app.use(express.static('public'));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.json({ limit: "50mb" }));
