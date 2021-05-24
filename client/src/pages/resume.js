@@ -19,12 +19,12 @@ function Resume(props) {
   return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
-            <Jumbotron>
+          <Col size="md-11">
+            <Jumbotron>            
               <h1>
                Resume
               </h1>
-              <Col size="md-10 md-offset-1">
+              <Col size="md-12 md-offset-1">
               <h1>Uploads</h1>
               <table class="table table-striped">
   <thead>
