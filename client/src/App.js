@@ -8,7 +8,9 @@ import Signup from "./pages/signup";
 import Resume from "./pages/resume";
 import Upload from './pages/Upload.js';
 import Gallery from './pages/Gallery.js';
+import Tracker from './pages/tracker';
 
+//<Route exact path="/gallery" component={Gallery} />
 
 function App() {
   return (
@@ -16,13 +18,13 @@ function App() {
       <div>
         <Nav/>
         <Switch>
+        <Route exact path="/tracker" component={Tracker} />
         <Route exact path="/" component={Dashboard} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/resume" component={Resume} /> 
         <Route exact path="/upload" component={Upload} />
         <Route exact path="/gallery" component={Gallery} />
-        
         <Route component={NoMatch} />
         </Switch>
       </div>
