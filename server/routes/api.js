@@ -6,7 +6,7 @@ router.get("/api/user", (req, res) => {
   User.find({})
     .then((dbUsers) => {
       res.json(dbUsers);
-      console.log(dbUsers)
+      //console.log(dbUsers);
     })
     .catch((err) => {
       res.status(400).json(err);
@@ -30,7 +30,7 @@ router.post("/api/upload", async (req, res) => {
       upload_preset: "dev_setups",
     });
     console.log(uploadResponse);
-    res.json({ msg: "yaya" });
+    res.json({ msg: "upload successful" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ err: "Something went wrong" });
