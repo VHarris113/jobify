@@ -10,8 +10,10 @@ import {Button} from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import {Badge} from "react-bootstrap";
 
+
 function insert() {
     return (
+     
       <Container>
       
         <div className="row">
@@ -36,71 +38,69 @@ function insert() {
                 </button>
             </div>
             </div>
-            
-    
+         
+            <div style={{ display: 'block', 
+                  width: 700, 
+                  padding: 30 }}>
+      <h4>Select your status and enter the information requested below</h4>
+      <Form>
+      <Form.Group>
+          <Form.Label></Form.Label>
+          <Form.Control type="text" 
+                        placeholder="Company:" />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label></Form.Label>
+          <Form.Control type="text" 
+                        placeholder="Job Title" />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label></Form.Label>
+          <Form.Control type="text" placeholder="Location" />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label></Form.Label>
+          <Form.Control type="number" 
+                        placeholder="Salary" />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label></Form.Label>
+          <Form.Control type="text" placeholder="Listing URL" />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label></Form.Label>
+          <Form.Control type="text" 
+                        placeholder="Date Applied" />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label></Form.Label>
+          <Form.Control type="text" placeholder="Follow Up Date" />
+        </Form.Group>
+      
+  <Form.Group controlId="exampleForm.ControlTextarea1">
+    <Form.Label>Note</Form.Label>
+    <Form.Control as="textarea" rows={3} />
+  </Form.Group>
+</Form>
 
-      <div>
+<Button variant="primary" type="submit">
+Click here to submit form
+</Button>
 
-  <InputGroup size="sm" className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text id="inputGroup-sizing-sm">Company</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
-  <br />
-  <InputGroup size="sm" className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text id="inputGroup-sizing-sm">Job Title</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
-  <br />
-  <InputGroup size="sm" className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text id="inputGroup-sizing-sm">Location</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
-  <br />
-  <InputGroup size="sm" className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text id="inputGroup-sizing-sm">Salary</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
-  <br />
-  <InputGroup size="sm" className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text id="inputGroup-sizing-sm">Listing URL</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
-  <br />
-  <InputGroup size="sm" className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text id="inputGroup-sizing-sm">Date Applied</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
-  <br />
-  <InputGroup size="sm" className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text id="inputGroup-sizing-sm">Follow Up</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
-  <br />
-  <InputGroup>
-    <InputGroup.Prepend>
-      <InputGroup.Text>Note</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl as="textarea" aria-label="With textarea" />
-  </InputGroup>
-  </div>
-</Container>
+</div>
+
+
+{/* <div className="container">
+<div class="form-floating">
+<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+<label for="floatingTextarea">Comments</label>
+</div>
+  </div>          */}
+  
+</Container> 
 
 
         );
-    }
+    }   
     
     export default insert;
