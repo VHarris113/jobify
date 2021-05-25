@@ -6,7 +6,7 @@ var loginFormHandler = async (event) => {
 
     if (email && password) {
 
-        const response = await fetch("./models/profile", {
+        const response = await fetch("/api/user", {
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { "Content-Type": "application/json" },
@@ -15,7 +15,7 @@ var loginFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace("/pages/resume");
         } else {
-            //need code for when login is not correct
+            document.location.replace("./models/login");
         }
     }
 };
@@ -27,7 +27,16 @@ var signupFormHandler = async (event) => {
     const email = document.querySelector("#email-signup").value.trim();
     const password = document.querySelector("#password-signup").value.trim();
 
-    if (name && email && password) {
-        const response = await fetch("/api/")
+    if (username && email && password) {
+        const response = await fetch("/pages/resume", {
+            method: "POST",
+            body: JSON.stringify({ username, email, password }),
+            header: { "Content-Type": "application/json"},
+        });
+
+        if (response.ok) {
+            document.location.replace("/")
+        }
     }
 }
+
