@@ -10,6 +10,8 @@ import Upload from './pages/Upload.js';
 import Gallery from './pages/Gallery.js';
 import Tracker from './pages/tracker';
 import "../src/pages/style.css";
+import Insert from './pages/insert.js';
+
 //<Route exact path="/gallery" component={Gallery} />
 
 function App() {
@@ -22,7 +24,8 @@ function App() {
         <Route exact path="/" component={Dashboard} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
-        <Route exact path="/resume" component={Resume} /> 
+        <Route exact path="/resume" component={Resume} />
+        <Route exact path="/insert" component={Insert} />
      {/* //   <Route exact path="/upload" component={Upload} />
        // <Route exact path="/gallery" component={Gallery} /> */}
         {/* <Route component={NoMatch} /> */}
