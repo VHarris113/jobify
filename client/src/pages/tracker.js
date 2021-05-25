@@ -30,9 +30,8 @@ function Tracker(props) {
                 </button>
             </div>
             </div>
-
-              <div class="text-right">
-                <button id = "addbtn" type="button" class="btn ">add job</button>
+              <div id = "addbtn" class="text-right">
+              <a href="/insert"  id = "btn-sign-up" class="btn btn-secondary">Add a Job</a>
             </div>
               <table class="table table-striped">
   <thead>
