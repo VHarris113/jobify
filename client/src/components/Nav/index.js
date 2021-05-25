@@ -1,6 +1,7 @@
 import React from "react";
 function Nav() {
   return (
+    <div style={{borderBottom:  "5px solid black"}}>
     <nav className="navbar navbar-expand-lg bg-light bg-success">
       <a className=" navbar-brand" href="#">
         {" "}
@@ -38,11 +39,9 @@ function Nav() {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-success" href="/signup">
-              sign-up
-            </a>
+          <a href="/signup"  id = "btn-sign-in"  class="btn btn-info">Sign-up</a>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a className="nav-link text-success" href="/upload">
               upload
             </a>
@@ -51,10 +50,11 @@ function Nav() {
             <a className="nav-link text-success" href="/gallery">
               gallery
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>
+    </div>
   );
 }
 

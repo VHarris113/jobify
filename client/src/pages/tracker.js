@@ -5,23 +5,9 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import "./style.css";
 function Tracker(props) {
- // const [book, setBook] = useState({})
-
-  // When this component mounts, grab the book with the _id of props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-//   const {id} = useParams()
-//   useEffect(() => {
-//     API.getBook(id)
-//       .then(res => setBook(res.data))
-//       .catch(err => console.log(err));
-//   }, [])
-
   return (
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-
+      <Container >
+ 
             <div  className="row">
             <div className="badge col md-1">
                 <button  id= "wishlist" style={{ width: 200, height: 200 }} type="button" class="btn ">
@@ -45,7 +31,6 @@ function Tracker(props) {
             </div>
             </div>
 
-              <Col size="md-12 md-offset-1">
               <div id = "addbtn" class="text-right">
                 <button type="button" class="btn ">Add Job</button>
             </div>
@@ -90,15 +75,6 @@ function Tracker(props) {
     </tr>
   </tbody>
 </table>
-          </Col>
-            </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-2">
-            <Link to="/">← Back to Dashboard</Link>
-          </Col>
-        </Row>
       </Container>
     );
   }
