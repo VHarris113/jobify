@@ -29,20 +29,52 @@ button{
 }
 #addbtn
 {
-    padding-top: 4%;
-    padding-bottom: 1%;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  background-color: rgb(39, 39, 165); /* Green */
+  border: none;
+  color: white;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 #gridedit
 {
-    background-color: blue;
-    color: white;
+  margin-bottom: 15px;
+  background-color: gray; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
 }
 
+
+#legend
+{
+  background-color: rgb(238, 57, 57); /* Green */
+}
+#legendOffer
+{
+  background-color: #4CAF50; /* Green */
+}
 #griddelete
 {
-    background-color: orangered;
-    color: white;
+  margin-bottom: 15px;
+  background-color: rgb(238, 57, 57); /* Green */
+  border: none;
+  color: white;
+  padding: 5px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 
