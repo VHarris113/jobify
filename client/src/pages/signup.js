@@ -3,10 +3,6 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 function login() {
     return (
-        <Container fluid>
-        <Row>
-        <Col size="md-12">
-        <Jumbotron>
         <section class="signup">
             <div class="container">
                 <div class="signup-content">
@@ -45,10 +41,8 @@ function login() {
                 </div>
             </div>
         </section>
-        </Jumbotron>
-        </Col>
-      </Row>
-    </Container>
+
+
 );
 }
 
