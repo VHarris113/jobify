@@ -13,6 +13,17 @@ router.get("/api/user", (req, res) => {
     });
 });
 
+router.post("/api/user", (req, res) => {
+  User.find({})
+    .then((dbUsers) => {
+      res.json(dbUsers);
+      //console.log(dbUsers);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
+});
+
 router.get("/api/images", async (req, res) => {
   const { resources } = await cloudinary.search
     .expression("folder:dev_setups")
