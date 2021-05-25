@@ -1,0 +1,59 @@
+button{
+
+    background-color: green;
+}
+#addbtn
+{
+    padding-top: 4%;
+    padding-bottom: 1%;
+}
+
+#gridedit
+{
+    background-color: blue;
+    color: white;
+}
+
+#griddelete
+{
+    background-color: orangered;
+    color: white;
+}
+
+
+#wishlist
+{
+    border-style: solid;
+    border-width: 4px;
+    border-color: darkslategray;
+    font-size: 30px;
+    background-color: yellow;
+
+}
+
+#denied
+{
+    border-style: solid;
+    border-width: 4px;
+    border-color: darkslategray;
+    font-size: 30px;
+    background-color: red
+}
+#offer
+{
+    border-style: solid;
+    border-width: 4px;
+    border-color: darkslategray;
+    font-size: 30px;
+    background-color: blueviolet;
+}
+
+#pending
+{
+    border-style: solid;
+    border-width: 4px;
+    border-color: darkslategray;
+    font-size: 30px;
+    background-color: rgb(177, 116, 36);
+}
+
