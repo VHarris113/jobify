@@ -13,7 +13,7 @@ var loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace("/pages/resume");
+            document.location.replace("/pages/dashboard");
         } else {
             document.location.replace("./models/login");
         }
@@ -28,7 +28,7 @@ var signupFormHandler = async (event) => {
     const password = document.querySelector("#password-signup").value.trim();
 
     if (username && email && password) {
-        const response = await fetch("/pages/resume", {
+        const response = await fetch("/api/users", {
             method: "POST",
             body: JSON.stringify({ username, email, password }),
             header: { "Content-Type": "application/json"},
@@ -36,7 +36,26 @@ var signupFormHandler = async (event) => {
 
         if (response.ok) {
             document.location.replace("/")
+        } else {
+            console.log(response);
         }
     }
-}
+};
 
+var logoutFormHandler = async () => {
+    const response = await fetch("/api/users/logout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+        document.location.replace("/");
+    } else {
+        console.log(response);
+    }
+};
+
+document.querySelector(".login-form").addEventListener("submit", loginFormHandler);
+
+document.querySelector(".signup-form", signupFormHandler).addEventListener("submit", signupFormHandler);
+
+document.querySelector("#logout").addEventListener("click", logoutFormHandler);
