@@ -43,8 +43,8 @@ function Tracker(props) {
   <tbody>
     <tr>
       <td className = "text-left" >
-      <h2>Developer</h2>
-      <h6>Dell</h6>
+      <h5>Developer</h5>
+      <span class="">Dell</span>
       </td>
       <td className = "text-right" >
       <div  className="row">
@@ -59,8 +59,8 @@ function Tracker(props) {
     </tr>
     <tr>
       <td className = "text-left" >
-      <h2>Sr. Developer</h2>
-      <h6>Infor</h6>
+      <h5>Sr Developer</h5>
+      <span class="">Infor</span>
       </td>
       <td className = "text-right" >
       <div  className="row">

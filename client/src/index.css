@@ -1,5 +1,17 @@
+  
+* {
+  font-family: Montserrat;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+}
+
+h1 {
+  font-family: Montserrat;
+}
+
+h2 {
+  font-family: Montserrat;
 }

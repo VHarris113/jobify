@@ -94,7 +94,7 @@ export default function Upload() {
   <tbody>
     <tr>
       <td className = "text-left" >
-      <h2>EloyResume1</h2>
+      EloyResume1
       </td>
       <td className = "text-left" >
       <h2>11/20/2020</h2>
