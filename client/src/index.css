@@ -8,31 +8,7 @@ body {
   padding: 0;
 }
 
-h1 {
-  font-family: Montserrat;
-}
-
-h2 {
-  font-family: Montserrat;
-
-}
-
-h3 {
-  font-family: Montserrat;
-
-}
-
-h4 {
-  font-family: Montserrat;
-
-}
-
-h5 {
-  font-family: Montserrat;
-
-}
-
-h6 {
+h1, h2, h3, h4, h5, h6{
   font-family: Montserrat;
 }
 
