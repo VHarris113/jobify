@@ -29,7 +29,7 @@ function login() {
                     </div>
 
                     <div class="signin-form">
-                        <h2 class="form-title">Log In Below</h2>
+                        <h2 class="form-title">Log In</h2>
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
