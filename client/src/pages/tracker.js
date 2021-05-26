@@ -10,27 +10,26 @@ function Tracker(props) {
  
             <div  className="row">
             <div className="badge col md-1">
-                <button  id= "wishlist" style={{ width: 200, height: 200 }} type="button" class="btn ">
+                <button  id= "wishlist" style={{ width:  180, height:  180}} type="button" class="btn ">
                 Wishlist<span class="badge badge-secondary"> 1</span>
                 </button>
             </div>
             <div className="badge col md-1">
-                <button id= "pending"   style={{ width: 200, height: 200 }} type="button" class="btn ">
+                <button id= "pending"   style={{ width:  180, height:  180 }} type="button" class="btn ">
                   Pending <span class="badge badge-secondary"> 3</span>
                 </button>
             </div>
             <div  className="badge col md-1">
-                <button  id= "denied"  style={{ width: 200, height: 200 }} type="button" class="btn ">
+                <button  id= "denied"  style={{ width:  180, height:  180}} type="button" class="btn ">
                   Denied <span class="badge badge-secondary"> 3</span>
                 </button>
             </div>
             <div className="badge col md-1">
-                <button  id= "offer"   style={{ width: 200, height: 200 }} type="button" class="btn ">
+                <button  id= "offer"   style={{ width: 180, height: 180 }} type="button" class="btn ">
                   Offer <span class="badge badge-secondary"> 3</span>
                 </button>
             </div>
             </div>
-
               <div id = "addbtn" class="text-right">
               <a href="/insert"  id = "btn-sign-up" class="btn btn-secondary">Add a Job</a>
             </div>
@@ -43,11 +42,12 @@ function Tracker(props) {
   <tbody>
     <tr>
       <td className = "text-left" >
-      <h2>Developer</h2>
-      <h6>Dell</h6>
+      <h5>Developer</h5>
+      <span class="">Dell</span>
       </td>
       <td className = "text-right" >
       <div  className="row">
+      <div id = "legend">              Denied  </div>
             <div className="col md-3">
             <button id ="gridedit"  type="button" class="btn">edit</button>
             </div>
@@ -59,12 +59,14 @@ function Tracker(props) {
     </tr>
     <tr>
       <td className = "text-left" >
-      <h2>Sr. Developer</h2>
-      <h6>Infor</h6>
+      <h5>Sr Developer</h5>
+      <span class="">Infor</span>
       </td>
       <td className = "text-right" >
       <div  className="row">
+      <div id = "legendOffer">              Offer</div>
             <div className="col md-3">
+  
             <button id ="gridedit"    type="button" class="btn">edit</button>
             </div>
             <div >

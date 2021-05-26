@@ -29,20 +29,52 @@ button{
 }
 #addbtn
 {
-    padding-top: 4%;
-    padding-bottom: 1%;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  background-color: rgb(39, 39, 165); /* Green */
+  border: none;
+  color: white;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 #gridedit
 {
-    background-color: blue;
-    color: white;
+  margin-bottom: 15px;
+  background-color: gray; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
 }
 
+
+#legend
+{
+  background-color: rgb(238, 57, 57); /* Green */
+}
+#legendOffer
+{
+  background-color: #4CAF50; /* Green */
+}
 #griddelete
 {
-    background-color: orangered;
-    color: white;
+  margin-bottom: 15px;
+  background-color: rgb(238, 57, 57); /* Green */
+  border: none;
+  color: white;
+  padding: 5px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 
@@ -52,13 +84,11 @@ button{
     border-width: 4px;
     border-color: darkslategray;
     font-size: 30px;
-    background-color: yellow;
-
+    background-color: #45B1C9;
 }
 
 #btn-sign-in
 {
-   
     margin-bottom: 15px;
     background-color: orange; /* Green */
     border: none;
@@ -88,7 +118,7 @@ button{
     border-width: 4px;
     border-color: darkslategray;
     font-size: 30px;
-    background-color: red
+    background-color: #FF1152;
 }
 #offer
 {
@@ -96,7 +126,7 @@ button{
     border-width: 4px;
     border-color: darkslategray;
     font-size: 30px;
-    background-color: blueviolet;
+    background-color: #2CFB6A;
 }
 
 #pending
@@ -105,9 +135,16 @@ button{
     border-width: 4px;
     border-color: darkslategray;
     font-size: 30px;
-    background-color: rgb(177, 116, 36);
+    background-color: #FFE74E;
 }
 
+table {
+  width: 100%;
+}
+
+th {
+  height: 70px;
+}
 /* @extend display-flex; */
 display-flex, .display-flex, .display-flex-center, .signup-content, .signin-content, .social-login, .socials {
     display: flex;
@@ -321,7 +358,7 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
         padding-top: 5px;
         padding-bottom: 5px;
  
-        margin: 0 auto;
+        margin: 4em auto;
         box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
         -moz-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
         -webkit-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
