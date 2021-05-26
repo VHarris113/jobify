@@ -1,48 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
+
 function SignUp() {
 
-    const [, setBooks] = useState([])
-    const [formObject, setFormObject] = useState({})
-
-  // Load all books and store them with setBooks
-  useEffect(() => {
-    loadBooks()
-  }, [])
-
-  // Loads all books and sets them to books
-  function loadBooks() {
-    API.getBooks()
-      .then(res => 
-        setBooks(res.data)
-      )
-      .catch(err => console.log(err));
-  };
-
-
-    // var axios = require("axios");
-    // var data = JSON.stringify({
-    //   email: "",
-    //   password: "",
-    // });
-    // var config = {
-    //   method: "post",
-    //   url: "http://localhost:3001/api/signup",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Cookie: "",
-    //   },
-    //   data: data,
-    // };
-    // axios(config)
-    //   .then(function (response) {
-    //     console.log(JSON.stringify(response.data));
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
-
+    const [state, setState] = useState({
+        email: "",
+        password: ""
+      });
+    
+      handleInputChange = event => {
+        // Getting the value and name of the input which triggered the change
+        let value = event.target.value;
+        const name = event.target.name;
+    
+        
+        // Updating the input's state
+        setState({
+            ...state, 
+          [name]: value
+        });
+      };
+    
+      handleFormSubmit = event => {
+        // Preventing the default behavior of the form submit (which is to refresh the page)
+        event.preventDefault();
+       axios.post("/api/signup", state)
+          .then(function (response) {
+            console.log(JSON.stringify(response.data));
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+    
+        setState({
+          email: "",
+          password: ""
+        });
+      };
+    
+   
     return (
         <section class="signup">
             <div class="container">
@@ -56,11 +54,11 @@ function SignUp() {
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                                <input onChange={e => handleInputChange(e)} type="email" name="email" id="email" placeholder="Your Email"/>
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                                <input onChange={e => handleInputChange(e)} type="password" name="pass" id="pass" placeholder="Password"/>
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
