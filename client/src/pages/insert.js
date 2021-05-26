@@ -34,32 +34,32 @@ function insert() {
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="text" placeholder="Job Title" />
+            <Form.Control type="text" placeholder="Job Title:" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="text" placeholder="Location" />
+            <Form.Control type="text" placeholder="Location:" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="number" placeholder="Salary" />
+            <Form.Control type="number" placeholder="Salary:" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="text" placeholder="Listing URL" />
+            <Form.Control type="text" placeholder="Listing URL:" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="text" placeholder="Date Applied" />
+            <Form.Control type="text" placeholder="Date Applied:" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="text" placeholder="Follow Up Date" />
+            <Form.Control type="text" placeholder="Follow Up Date:" />
           </Form.Group>
 
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label></Form.Label>
-            <Form.Control as="textarea" rows={4} placeholder="Notes" />
+            <Form.Control as="textarea" rows={4} placeholder="Notes:" />
           </Form.Group>
         </Form>
 <br/>
