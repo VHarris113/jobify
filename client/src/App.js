@@ -12,6 +12,8 @@ import Tracker from './pages/tracker';
 import "../src/pages/style.css";
 import Insert from './pages/insert.js';
 
+
+
 //<Route exact path="/gallery" component={Gallery} />
 
 function App() {

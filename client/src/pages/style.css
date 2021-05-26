@@ -27,6 +27,10 @@ button{
 
     background-color: green;
 }
+#fileInput
+{
+  width: 30%;
+}
 #addbtn
 {
   margin-bottom: 15px;
@@ -40,6 +44,14 @@ button{
   display: inline-block;
   font-size: 16px;
 }
+
+.formresume
+{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
 
 #gridedit
 {
