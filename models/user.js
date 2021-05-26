@@ -6,13 +6,19 @@ const userSchema = new Schema({
   username: {
     type: String,
     trim: true,
-    required: "Username is Required",
+    required: true,
   },
 
   email: {
     type: String,
     trim: true,
-    required: "Password is Required",
+    required: true,
+  },
+
+  password: {
+    type: String,
+    trim: true,
+    required: true,
   },
 
   linkedIn: {
@@ -26,6 +32,12 @@ const userSchema = new Schema({
   jobTitle: {
     type: String,
   },
+
+  cloudinaryUrl: {
+    type: String,
+  },
+  
+  
 });
 
 const User = mongoose.model("User", userSchema);

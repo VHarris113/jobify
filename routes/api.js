@@ -1,7 +1,10 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const { cloudinary } = require("../utils/cloudinary");
+const mongoose = require("mongoose")
+// const User = mongoose.model("User");
 
+// Route for getting users from the database
 router.get("/api/user", (req, res) => {
   User.find({})
     .then((dbUsers) => {
@@ -13,16 +16,35 @@ router.get("/api/user", (req, res) => {
     });
 });
 
-router.post("/api/user", (req, res) => {
-  User.find({})
-    .then((dbUsers) => {
-      res.json(dbUsers);
-      //console.log(dbUsers);
+// route for signing up users
+router.post('/signup',(req,res)=>{
+  const {name,email,password} = req.body
+  if(!email || !password || !name){
+      res.json({error:"please add all the required fields"})
+  }
+  User.findOne({email:email})
+  .then((dbUsers)=> {
+    if(dbUsers){
+      return res.status(422).json({error:"user already exists with that email"})
+    }
+    const user = new User({
+      email: email,
+      password: password,
+      name: name,
     })
-    .catch((err) => {
-      res.status(400).json(err);
-    });
+    user.save()
+    .then(user=>{
+      res.json({message:"saved successfully"})
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+  })
+  .catch(err=>{
+    console.log(err)
+  })
 });
+
 
 router.get("/api/images", async (req, res) => {
   const { resources } = await cloudinary.search
