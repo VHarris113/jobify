@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
+import API from "utils/API";
+import { set } from "mongoose";
+
 function login() {
+
+    // const [login, setLogin] = useState([])
+    // const [signup, setSighup] = useState([])
+
+    // useEffect(() => {
+    //     userLogin()
+    // }, [])
+
+    // function userLogin() {
+    //     API.getProfiles()
+    //     .then(res =>
+    //         set.session)
+    // }
+
     return (
         <section class="sign-in">
             <div class="container">
