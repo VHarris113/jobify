@@ -9,24 +9,25 @@ import { Carousel } from 'react-responsive-carousel';
 function Welcome() {
     return (
         <Container>
+          <a href="/tracker">Link to Job Tracker Page</a>
         <div class="bd-example">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active carousel-item-left">
-            <img src="https://www.abroad-experience.com/wp-content/uploads/2015/07/Find-a-Job.jpg" class="d-block w-100" alt="..."/>
+            <img src="https://th.bing.com/th/id/R453366fe634fcd56dffb4cc1d1971a63?rik=tGdAhMMXRJMT%2fQ&riu=http%3a%2f%2fgettinghiredweb.s3.amazonaws.com%2fCommunity%2fBlog+photos%2fJob+Search.jpg&ehk=YhzB4mSDjE%2fEzc%2bqX5zj153rq2gQD8FMR%2b6Mv2TuiaM%3d&risl=&pid=ImgRaw" class="d-block w-100" alt="..."/>
                 <div  id = "carousel-textbox3"  class="carousel-caption d-none d-md-block">
                     <h1>Take control of your your job hunt.</h1>
                     <h6>Organize your job search and discover new opportunities, all in one place.</h6>
                     <div class="left"> 
-                    <a href="/signup"  id = "btn-sign-in"  class="btn btn-info">Sign-up</a>
+                    <a href="/signup"  id = "btn-sign-in"  class="btn btn-info">sign-up</a>
                     </div>
                     <div class="left"> 
-                    <a href="/login"  id = "btn-sign-up" class="btn btn-secondary">Login</a>
+                    <a href="/login"  id = "btn-sign-up" class="btn btn-secondary">login</a>
                     </div> 
                 </div>
             </div>
             <div class="carousel-item carousel-item-next carousel-item-left">
-            <img src="https://th.bing.com/th/id/R453366fe634fcd56dffb4cc1d1971a63?rik=tGdAhMMXRJMT%2fQ&riu=http%3a%2f%2fgettinghiredweb.s3.amazonaws.com%2fCommunity%2fBlog+photos%2fJob+Search.jpg&ehk=YhzB4mSDjE%2fEzc%2bqX5zj153rq2gQD8FMR%2b6Mv2TuiaM%3d&risl=&pid=ImgRaw" class="d-block w-100" alt="..."/>
+            <img src="https://th.bing.com/th/id/Rafa7c522503650f9c1e24b809807cf03?rik=%2fxdcktyne439%2fA&riu=http%3a%2f%2fbuzzsouthafrica.com%2fwp-content%2fuploads%2fFind_Jobs.jpg&ehk=BYdU8DkDJrWgPAlcGY%2ffuJTq03nruz7SO5bjriLK9Hs%3d&risl=&pid=ImgRaw" class="d-block w-100" alt="..."/>
                 <div id = "carousel-textbox1" class="carousel-caption d-none d-md-block">
                     <h1>Job tracking made easy.</h1>
                     <h6>We can help keep job search simple.</h6>
