@@ -5,7 +5,10 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Image } from 'cloudinary-react';
 import Alert from '../components/Alert';
-
+import { Form } from "react-bootstrap";
+import { InputGroup } from "react-bootstrap";
+import {FormControl} from "react-bootstrap";
+import {Button} from "react-bootstrap";
 export default function Upload() {
     const [fileInputState, setFileInputState] = useState('');
     const [previewSource, setPreviewSource] = useState('');
@@ -59,10 +62,10 @@ export default function Upload() {
     return (
       <Container>
         <div>
-            <h1 className="title">Upload your resume</h1>
+            <h1 className="title">resume review</h1>
             <Alert msg={errMsg} type="danger" />
             <Alert msg={successMsg} type="success" />
-            <form onSubmit={handleSubmitFile} className="form">
+            <form onSubmit={handleSubmitFile} className="formresume">
                 <input
                     id="fileInput"
                     type="file"
@@ -83,10 +86,10 @@ export default function Upload() {
                 />
             )}
         </div>
-        <table class="table table-striped">
+              <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Name</th>
+    <th scope="col">Name</th>
       <th scope="col">Created</th>
       <th scope="col">Modified</th>
     </tr>
@@ -94,13 +97,16 @@ export default function Upload() {
   <tbody>
     <tr>
       <td className = "text-left" >
-      EloyResume1
+      <h5>Resume Eloy</h5>
+
       </td>
       <td className = "text-left" >
-      <h2>11/20/2020</h2>
+      <h5>04/3/2021</h5>
+
       </td>
       <td className = "text-left" >
-      <h2>11/20/2020</h2>
+      <h5>04/3/2021</h5>
+
       </td>
       <td className = "text-right" >
       <div  className="row">
@@ -113,27 +119,20 @@ export default function Upload() {
         </div>
       </td>
     </tr>
-    <td className = "text-left" >
-      <h2>EloyResume1</h2>
-      </td>
-      <td className = "text-left" >
-      <h2>11/20/2020</h2>
-      </td>
-      <td className = "text-left" >
-      <h2>11/20/2020</h2>
-      </td>
-      <td className = "text-right" >
-      <div  className="row">
-            <div className="col md-3">
-            <button id ="gridedit"  type="button" class="btn">edit</button>
-            </div>
-            <div >
-            <button  id ="griddelete"  type="button" class="btn">delete</button>
-            </div>
-        </div>
-      </td>
   </tbody>
 </table>
+<h5>Sculp your resume from reviewer</h5>
+<Form>
+   
+  <Form.Group controlId="exampleForm.ControlTextarea1">
+    <Form.Label>I will recommend you to change the section bla bla   "Eloy Gonzlez 04/20/2021"</Form.Label>
+    <Form.Control as="textarea" rows={3} />
+  </Form.Group>
+</Form>
+
+<Button variant="primary" type="submit">
+add a new comment
+</Button>
                </Container>
     );
 }
