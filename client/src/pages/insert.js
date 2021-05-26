@@ -13,19 +13,19 @@ import { Badge } from "react-bootstrap";
 function insert() {
   return (
     <Container>
-       <div style={{ display: "block", width: 700, padding: 30 }}>
+       <div style={{ display: "block", width: 900, padding: 30 }}>
        <h4 >Select your status:</h4>
        </div>
-       <div style={{ display: "block", width: 700, padding: 30 }}>
+       <div style={{ display: "block", width: 900, padding: 30 }}>
       <Button variant="outline-primary">Wishlist</Button>{" "}
       <Button variant="outline-secondary">Pending</Button>{" "}
       <Button variant="outline-success">Denied</Button>{" "}
       <Button variant="outline-warning">Offer</Button>{" "}
       </div>
-      <div style={{ display: "block", width: 700, padding: 30 }}>
+      <div style={{ display: "block", width: 900, padding: 30 }}>
        <h4> Enter the information requested below:</h4>
        </div>
-      <div style={{ display: "block", width: 700, padding: 30 }}>
+      <div style={{ display: "block", width: 950, padding: 30 }}>
     
         <Form>
           <Form.Group>
@@ -59,12 +59,12 @@ function insert() {
 
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label></Form.Label>
-            <Form.Control as="textarea" rows={3} placeholder="Notes" />
+            <Form.Control as="textarea" rows={4} placeholder="Notes" />
           </Form.Group>
         </Form>
-
+<br/>
         <Button variant="primary" type="submit">
-          Click here to submit form
+           Submit Form
         </Button>
       </div>
       {/* <div className="container">
