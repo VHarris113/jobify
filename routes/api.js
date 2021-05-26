@@ -84,6 +84,7 @@ router.get("/api/secret", withAuth, function (req, res) {
 
 router.post("/api/signup", function (req, res) {
   const { email, password } = req.body;
+  console.log("email", email);
   const user = new User({ email, password });
   user.save(function (err) {
     if (err) {

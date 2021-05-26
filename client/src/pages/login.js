@@ -4,20 +4,22 @@ import { Col, Row, Container } from "../components/Grid";
 import API from "utils/API";
 import { set } from "mongoose";
 
-function login() {
+function Login() {
 
-    // const [login, setLogin] = useState([])
-    // const [signup, setSighup] = useState([])
-
-    // useEffect(() => {
-    //     userLogin()
-    // }, [])
-
-    // function userLogin() {
-    //     API.getProfiles()
-    //     .then(res =>
-    //         set.session)
-    // }
+    var axios = require("axios");
+    var data = JSON.stringify({
+      email: "",
+      password: "",
+    });
+    var config = {
+      method: "post",
+      url: "/api/login",
+      headers: {
+        "Content-Type": "application/json",
+        Cookie: "",
+      },
+      data: data,
+    };
 
     return (
         <section class="sign-in">
@@ -64,4 +66,4 @@ function login() {
 
 
 
-export default login;
+export default Login;

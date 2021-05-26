@@ -1,7 +1,48 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-function login() {
+function SignUp() {
+
+    const [, setBooks] = useState([])
+    const [formObject, setFormObject] = useState({})
+
+  // Load all books and store them with setBooks
+  useEffect(() => {
+    loadBooks()
+  }, [])
+
+  // Loads all books and sets them to books
+  function loadBooks() {
+    API.getBooks()
+      .then(res => 
+        setBooks(res.data)
+      )
+      .catch(err => console.log(err));
+  };
+
+
+    // var axios = require("axios");
+    // var data = JSON.stringify({
+    //   email: "",
+    //   password: "",
+    // });
+    // var config = {
+    //   method: "post",
+    //   url: "http://localhost:3001/api/signup",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Cookie: "",
+    //   },
+    //   data: data,
+    // };
+    // axios(config)
+    //   .then(function (response) {
+    //     console.log(JSON.stringify(response.data));
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
+
     return (
         <section class="signup">
             <div class="container">
@@ -48,4 +89,4 @@ function login() {
 
 
 
-export default login;
+export default SignUp;
