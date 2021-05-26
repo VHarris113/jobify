@@ -10,11 +10,11 @@ function SignUp() {
         password: ""
       });
     
-      handleInputChange = event => {
+      const handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
         let value = event.target.value;
         const name = event.target.name;
-    
+        console.log(name, value)
         
         // Updating the input's state
         setState({
@@ -23,7 +23,7 @@ function SignUp() {
         });
       };
     
-      handleFormSubmit = event => {
+     const handleFormSubmit = event => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
        axios.post("/api/signup", state)
@@ -58,7 +58,7 @@ function SignUp() {
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input onChange={e => handleInputChange(e)} type="password" name="pass" id="pass" placeholder="Password"/>
+                                <input onChange={e => handleInputChange(e)} type="password" name="password" id="pass" placeholder="Password"/>
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
@@ -69,7 +69,7 @@ function SignUp() {
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                                <input onClick={handleFormSubmit} type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
                             </div>
                         </form>
                     </div>
