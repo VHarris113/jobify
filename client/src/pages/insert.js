@@ -57,11 +57,14 @@ function Insert() {
           <Form.Group>
             <Form.Label></Form.Label>
             <Form.Control name = "followed" type="text" placeholder="Follow Up Date" />
+
           </Form.Group>
 
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label></Form.Label>
+
             <Form.Control value ={useState.Note} name = "note" onChange={handleInputChange} as="textarea" rows={4} placeholder="Notes" />
+
           </Form.Group>
         </Form>
 <br/>
