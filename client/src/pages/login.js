@@ -11,10 +11,6 @@ function Login() {
         email: "",
         password: ""
       });
-
-      useEffect(() => {
-        userLogin()
-      }, []);
     
       const handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
@@ -44,14 +40,6 @@ function Login() {
           email: "",
           password: ""
         });
-      };
-
-      function userLogin() {
-        API.getUser()
-        .then(res =>
-          setUser(res.data)
-          )
-          .catch(err => console.log(err));
       };
     
     return (
