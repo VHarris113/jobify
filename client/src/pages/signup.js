@@ -64,8 +64,8 @@ function SignUp() {
                                 <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
                             </div>
                             <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                                <input type="checkbox" name="agree-term" id="agree-term" class="checkbox-effect checkbox-effect-1" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="https://www.termsservicetemplate.com/live.php?token=03czSWTdWjGrlr5nOFLMDEJrwzgGqqL9" class="term-service">Terms of service</a></label>
                             </div>
                             <div class="form-group form-button">
                                 <input onClick={handleFormSubmit} type="submit" name="signup" id="signup" class="form-submit" value="Register"/>

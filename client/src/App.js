@@ -30,6 +30,7 @@ function App() {
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/resume" component={Resume} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/insert" component={Insert} />
      {/* //   <Route exact path="/upload" component={Upload} />
        // <Route exact path="/gallery" component={Gallery} /> */}
         {/* <Route component={NoMatch} /> */}

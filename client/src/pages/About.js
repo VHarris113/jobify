@@ -24,12 +24,12 @@ function About() {
       </Container>
 
       <Container>
-      <h4 id ="abouttitle">We Love to hear from you..</h4>
+      <h4 id ="abouttitle">We would love to hear from you...</h4>
       <p>
-            Need help? or , want to tell us how we are doing?, or just need some help to get some pointers? Just drop us and email.
+            Need help? or , want to tell us how we are doing?, or just need some help to get some pointers? Just drop us an
             </p>
           <a href="mailto:Wecare@jobify.com?subject=Purpose is Inquiry" target="_top">
-Contact for inquiry</a>
+          email.</a>
 </Container>
     </div>
   );

@@ -63,7 +63,7 @@ function Insert() {
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label></Form.Label>
 
-            <Form.Control value ={useState.Note} name = "note" onChange={handleInputChange} as="textarea" rows={4} placeholder="Notes" />
+            {/* <Form.Control value ={useState.Note} name = "note" onChange={handleInputChange} as="textarea" rows={4} placeholder="Notes" /> */}
 
           </Form.Group>
         </Form>

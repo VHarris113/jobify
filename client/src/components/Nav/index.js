@@ -29,6 +29,11 @@ function Nav() {
             </a>
           </li>
           <li className="nav-item">
+            <a className="nav-link text-success" href="/about">
+              about
+            </a>
+          </li>
+          <li className="nav-item">
             <a className="nav-link  text-success" href="/resume">
               resume
             </a>
@@ -40,13 +45,7 @@ function Nav() {
           </li>
           <li className="nav-item">
           <a href="/signup"  id = "btn-sign-in"  class="btn btn-info">sign-up</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link text-success" href="/about">
-              about
-            </a>
-          </li>
-    
+          </li>    
           {/* <li className="nav-item">
             <a className="nav-link text-success" href="/upload">
               upload
