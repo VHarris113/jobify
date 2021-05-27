@@ -1,12 +1,13 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
+// import Login  from "../js/login";
 function login() {
     return (
         <section class="signup">
             <div class="container">
                 <div class="signup-content">
-                    <div class="signup-form">
+                    <div className="signup-form">
                         <h2 class="form-title">Sign up</h2>
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
@@ -36,7 +37,7 @@ function login() {
                     </div>
                     <div class="signup-image">
                         <figure><img src="images/signup-image.jpg" alt="sing up image"/></figure>
-                        <a href="#" class="signup-image-link">I am already member</a>
+                        <a href="/login" class="signup-image-link">I am already member</a>
                     </div>
                 </div>
             </div>

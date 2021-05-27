@@ -1,31 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
-import API from "utils/API";
-import { set } from "mongoose";
-
 function login() {
-
-    // const [login, setLogin] = useState([])
-    // const [signup, setSighup] = useState([])
-
-    // useEffect(() => {
-    //     userLogin()
-    // }, [])
-
-    // function userLogin() {
-    //     API.getProfiles()
-    //     .then(res =>
-    //         set.session)
-    // }
-
+    
     return (
         <section class="sign-in">
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src="images/signin-image.jpg" alt="sing up image"/></figure>
-                        <a href="#" class="signup-image-link">Create an account</a>
+                        <a href="/signup" class="signup-image-link">Create an account</a>
                     </div>
 
                     <div class="signin-form">
@@ -47,14 +31,6 @@ function login() {
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
                             </div>
                         </form>
-                        <div class="social-login">
-                            <span class="social-label">Or login with</span>
-                            <ul class="socials">
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
