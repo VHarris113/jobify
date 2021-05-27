@@ -4,11 +4,13 @@ import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
 import API from "utils/API";
 import { set } from "mongoose";
+import { Redirect } from "react-router";
+
 
 function Login() {
-  const [state, setState] = useState({
-    email: "",
-    password: "",
+    const [state, setState] = useState({
+        email: "",
+        password: ""
   });
 
   const handleInputChange = (event) => {
@@ -32,7 +34,46 @@ function Login() {
       })
       .catch(function (error) {
         console.log(error);
+
       });
+
+
+    return (
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="images/signin-image.jpg" alt="sing up image"/></figure>
+                        <a href="/signup" class="signup-image-link">Create an account</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Log In</h2>
+                        <form method="POST" class="register-form" id="login-form">
+                            <div class="form-group">
+                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input onChange={e => handleInputChange(e)} type="text" name="email" id="email" placeholder="Your Name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input onChange={e => handleInputChange(e)} type="password" name="password" id="your_pass" placeholder="Password"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input onClick={handleFormSubmit} type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+      );
+    // } else {
+    //   return <Redirect to="/tracker" />;
+    // }
 
     setState({
       email: "",

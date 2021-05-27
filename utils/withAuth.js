@@ -16,6 +16,8 @@ const withAuth = function(req, res, next) {
         res.status(401).send('Unauthorized: Invalid token');
       } else {
         req.email = decoded.email;
+        res.render("/tracker");
+        console.log("We are now logged in and rendering the new page");
         next();
       }
     });
