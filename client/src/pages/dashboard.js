@@ -24,7 +24,7 @@ function Welcome() {
               />
               <div
                 id="carousel-textbox3"
-                class="carousel-caption d-none d-md-block"
+                class="carousel-caption d-md-block"
               >
                 <h1>Take control of your your job hunt.</h1>
                 <h6>
@@ -51,7 +51,7 @@ function Welcome() {
               />
               <div
                 id="carousel-textbox1"
-                class="carousel-caption d-none d-md-block"
+                class="carousel-caption d-md-block"
               >
                 <h1>Job tracking made easy.</h1>
                 <h6>We can help keep job search simple.</h6>
@@ -65,7 +65,7 @@ function Welcome() {
               />
               <div
                 id="carousel-textbox2"
-                class="carousel-caption d-none d-md-block"
+                class="carousel-caption d-md-block"
               >
                 <h1>Helping you succeed in your job hunt!</h1>
                 <h6>
