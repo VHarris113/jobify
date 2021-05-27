@@ -11,7 +11,7 @@ function login() {
 
   var config = {
     method: "post",
-    url: "http://localhost:3001/api/login",
+    url: "/api/login",
     headers: {
       "Content-Type": "application/json",
       Cookie: "",
