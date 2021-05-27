@@ -1,5 +1,6 @@
 
 import React,{useState} from "react";
+import API from "utils/API";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
@@ -13,7 +14,8 @@ import { Badge } from "react-bootstrap";
 import axios from "axios";
 
 function Insert() {
-  const [state, setState]= useState([
+
+  const [state, setState] = useState([
     company: "",
     title: "",
     location: "",
@@ -46,9 +48,15 @@ function Insert() {
     });
 
     setState({
-
-    })
-  }
+      company: "",
+      title: "",
+      location: "",
+      salary: "",
+      url: "",
+      applied: "",
+      followed: ""
+    });
+  };
 
   return (
     <Container>
