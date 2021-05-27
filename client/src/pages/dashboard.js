@@ -9,6 +9,7 @@ import { Carousel } from 'react-responsive-carousel';
 function Welcome() {
     return (
         <Container>
+          <a href="/tracker">Link to Job Tracker Page</a>
         <div class="bd-example">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
@@ -18,10 +19,10 @@ function Welcome() {
                     <h1>Take control of your your job hunt.</h1>
                     <h6>Organize your job search and discover new opportunities, all in one place.</h6>
                     <div class="left"> 
-                    <a href="/signup"  id = "btn-sign-in"  class="btn btn-info">Sign-up</a>
+                    <a href="/signup"  id = "btn-sign-in"  class="btn btn-info">sign-up</a>
                     </div>
                     <div class="left"> 
-                    <a href="/login"  id = "btn-sign-up" class="btn btn-secondary">Login</a>
+                    <a href="/login"  id = "btn-sign-up" class="btn btn-secondary">login</a>
                     </div> 
                 </div>
             </div>

@@ -3,7 +3,7 @@ function Nav() {
   return (
     <div style={{borderBottom:  "5px solid black"}}>
     <nav className="navbar navbar-expand-lg bg-light bg-success">
-      <a className=" navbar-brand" href="#">
+      <a className=" navbar-brand" href="/">
         {" "}
         <img
           src={process.env.PUBLIC_URL + "/images/jobify.png"}
@@ -19,7 +19,7 @@ function Nav() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span className="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon">Menu</span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ml-auto text-secondary">
@@ -39,7 +39,7 @@ function Nav() {
             </a>
           </li>
           <li className="nav-item">
-          <a href="/signup"  id = "btn-sign-in"  class="btn btn-info">Sign-up</a>
+          <a href="/signup"  id = "btn-sign-in"  class="btn btn-info">sign-up</a>
           </li>
           {/* <li className="nav-item">
             <a className="nav-link text-success" href="/upload">

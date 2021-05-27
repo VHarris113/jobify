@@ -13,6 +13,8 @@ import "../src/pages/style.css";
 import Insert from './pages/insert.js';
 import withAuth from './utils/withAuth';
 
+
+
 //<Route exact path="/gallery" component={Gallery} />
 
 function App() {

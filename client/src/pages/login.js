@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
+import API from "utils/API";
+import { set } from "mongoose";
 
 function login() {
-  var axios = require("axios");
-  var data = JSON.stringify({
-    email: "",
-    password: "",
-  });
+
+    // const [login, setLogin] = useState([])
+    // const [signup, setSighup] = useState([])
+
+    // useEffect(() => {
+    //     userLogin()
+    // }, [])
+
+    // function userLogin() {
+    //     API.getProfiles()
+    //     .then(res =>
+    //         set.session)
+    // }
+
+    return (
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="images/signin-image.jpg" alt="sing up image"/></figure>
+                        <a href="#" class="signup-image-link">Create an account</a>
+                    </div>
 
   var config = {
     method: "post",
