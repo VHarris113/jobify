@@ -9,7 +9,7 @@ export default function withAuth(ComponentToProtect) {
         loading: true,
         redirect: false,
       };
-    }
+    };
 
     componentDidMount() {
       fetch('/checkToken')

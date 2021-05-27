@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
 import withAuth from "./utils/withAuth";
 import Nav from "./components/Nav";
 import Login from "./pages/login";
@@ -13,8 +13,7 @@ import About from './pages/About.js';
 import Tracker from './pages/tracker';
 import "../src/pages/style.css";
 import Insert from './pages/insert.js';
-
-
+import secret from './Secret';
 
 //<Route exact path="/gallery" component={Gallery} />
 
@@ -41,3 +40,5 @@ function App() {
 }
 
 export default App;
+
+
