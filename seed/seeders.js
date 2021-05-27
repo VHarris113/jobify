@@ -21,3 +21,5 @@ db.User.remove({})
     console.log(data.result.n);
     process.exit(0);
   });
+
+ 
