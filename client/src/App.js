@@ -26,7 +26,7 @@ function App() {
       <div>
         <Nav/>
         <Switch>
-        {/* <Route exact path="/tracker" component={Tracker} /> */}
+        <Route exact path="/tracker" component={Tracker} />
         <Route exact path="/" component={Dashboard} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />
