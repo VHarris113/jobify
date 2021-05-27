@@ -6,18 +6,18 @@ import { set } from "mongoose";
 
 function login() {
 
-    // const [login, setLogin] = useState([])
-    // const [signup, setSighup] = useState([])
+    const [login, setLogin] = useState([])
+    const [signup, setSighup] = useState([])
 
-    // useEffect(() => {
-    //     userLogin()
-    // }, [])
+    useEffect(() => {
+        userLogin()
+    }, [])
 
-    // function userLogin() {
-    //     API.getProfiles()
-    //     .then(res =>
-    //         set.session)
-    // }
+    function userLogin() {
+        API.getProfiles()
+        .then(res =>
+            set.session)
+    }
 
     return (
         <section class="sign-in">
@@ -27,6 +27,11 @@ function login() {
                         <figure><img src="images/signin-image.jpg" alt="sing up image"/></figure>
                         <a href="#" class="signup-image-link">Create an account</a>
                     </div>
+                  </div>
+            </div>
+        </section>
+              
+
 
   var config = {
     method: "post",
