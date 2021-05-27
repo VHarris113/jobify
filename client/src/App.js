@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
 import withAuth from "./utils/withAuth";
 import Nav from "./components/Nav";
 import Login from "./pages/login";
@@ -39,3 +39,5 @@ function App() {
 }
 
 export default App;
+
+

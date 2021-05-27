@@ -1,5 +1,4 @@
-
-import React,{useState} from "react";
+import React, { useState } from "react";
 import API from "utils/API";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
@@ -47,6 +46,7 @@ function Insert() {
       console.log(err);
     });
 
+
     setState({
       company: "",
       title: "",
@@ -69,15 +69,16 @@ function Insert() {
       <Button onClick= {()=> setState ("Pending")} variant="outline-secondary">Pending</Button>{" "}
       <Button onClick= {()=> setState ("Denied")} variant="outline-success">Denied</Button>{" "}
       <Button onClick= {()=> setState ("Offer")} variant="outline-warning">Offer</Button>{" "}
+
       </div>
       <div style={{ display: "block", width: 900, padding: 30 }}>
-       <h4> Enter the information requested below:</h4>
-       </div>
+        <h4> Enter the information requested below:</h4>
+      </div>
       <div style={{ display: "block", width: 950, padding: 30 }}>
-    
         <Form>
           <Form.Group>
             <Form.Label></Form.Label>
+
             <Form.Control onChange={e => handleInputChange(e)} name = "company" type="text" placeholder="Company:" />
           </Form.Group>
           <Form.Group>
@@ -91,10 +92,11 @@ function Insert() {
           <Form.Group>
             <Form.Label></Form.Label>
             <Form.Control onChange={e => handleInputChange(e)} name = "salary" type="number" placeholder="Salary" />
+
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control name = "url" type="link" placeholder="Listing URL" />
+            <Form.Control name="url" type="link" placeholder="Listing URL" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
@@ -105,9 +107,9 @@ function Insert() {
             <Form.Control onChange={e => handleInputChange(e)} name = "followed" type="text" placeholder="Follow Up Date" />
 
           </Form.Group>
-
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label></Form.Label>
+
 
             <Form.Control value ={useState.Note} name = "note" onChange={e => handleInputChange(e)} as="textarea" rows={4} placeholder="Notes" />
 
@@ -116,6 +118,7 @@ function Insert() {
 <br/>
         <Button onClick={handleFormSubmit} variant="primary" type="submit">
            Submit Form
+
         </Button>
       </div>
       {/* <div className="container">
