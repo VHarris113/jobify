@@ -12,7 +12,9 @@ import Navbar from "react-bootstrap/Navbar";
 import { Badge } from "react-bootstrap";
 
 function Insert() {
-  const [status, setStatus]= useState("")
+  const [state, setStatus]= useState("")
+
+
   return (
     <Container>
        <div style={{ display: "block", width: 900, padding: 30 }}>
@@ -68,7 +70,7 @@ function Insert() {
           </Form.Group>
         </Form>
 <br/>
-        <Button variant="primary" type="submit">
+        <Button onClick={handleFormSubmit} variant="primary" type="submit">
            Submit Form
         </Button>
       </div>

@@ -35,6 +35,4 @@ const formSchema = new Schema({
   },
 });
 
-const User = mongoose.model("form", formSchema);
-
-module.exports = User;
+module.exports = mongoose.model("form", formSchema);
