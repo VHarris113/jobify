@@ -1,4 +1,5 @@
-import React from "react";
+
+import React,{useState} from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
@@ -10,17 +11,18 @@ import { Button } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import { Badge } from "react-bootstrap";
 
-function insert() {
+function Insert() {
+  const [status, setStatus]= useState("")
   return (
     <Container>
        <div style={{ display: "block", width: 900, padding: 30 }}>
        <h4 >Select your status:</h4>
        </div>
        <div style={{ display: "block", width: 900, padding: 30 }}>
-      <Button variant="outline-primary">Wishlist</Button>{" "}
-      <Button variant="outline-secondary">Pending</Button>{" "}
-      <Button variant="outline-success">Denied</Button>{" "}
-      <Button variant="outline-warning">Offer</Button>{" "}
+      <Button onClick= {()=> setStatus ("Wishlist")} variant="outline-primary">Wishlist</Button>{" "}
+      <Button onClick= {()=> setStatus ("Pending")} variant="outline-secondary">Pending</Button>{" "}
+      <Button onClick= {()=> setStatus ("Denied")} variant="outline-success">Denied</Button>{" "}
+      <Button onClick= {()=> setStatus ("Offer")} variant="outline-warning">Offer</Button>{" "}
       </div>
       <div style={{ display: "block", width: 900, padding: 30 }}>
        <h4> Enter the information requested below:</h4>
@@ -30,36 +32,36 @@ function insert() {
         <Form>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="text" placeholder="Company:" />
+            <Form.Control name = "company" type="text" placeholder="Company:" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="text" placeholder="Job Title" />
+            <Form.Control name = "title" type="text" placeholder="Job Title" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="text" placeholder="Location" />
+            <Form.Control name = "location " type="text" placeholder="Location" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="number" placeholder="Salary" />
+            <Form.Control name = "salary" type="number" placeholder="Salary" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="text" placeholder="Listing URL" />
+            <Form.Control name = "url" type="link" placeholder="Listing URL" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="text" placeholder="Date Applied" />
+            <Form.Control name = "applied" type="text" placeholder="Date Applied" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="text" placeholder="Follow Up Date" />
+            <Form.Control name = "followed" type="text" placeholder="Follow Up Date" />
           </Form.Group>
 
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label></Form.Label>
-            <Form.Control as="textarea" rows={4} placeholder="Notes" />
+            <Form.Control value ={useState.Note} name = "note" onChange={handleInputChange} as="textarea" rows={4} placeholder="Notes" />
           </Form.Group>
         </Form>
 <br/>
@@ -77,4 +79,5 @@ function insert() {
   );
 }
 
-export default insert;
+export default Insert;
+
