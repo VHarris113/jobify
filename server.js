@@ -3,6 +3,7 @@ const path = require("path");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 var cors = require("cors");
+const jwt = require('jsonwebtoken');
 
 // const db = mongojs(databaseUrl, collections);
 

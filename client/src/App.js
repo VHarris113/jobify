@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
 import withAuth from "./utils/withAuth";
 import Nav from "./components/Nav";
 import Login from "./pages/login";
@@ -13,6 +13,8 @@ import About from './pages/About.js';
 import Tracker from './pages/tracker';
 import "../src/pages/style.css";
 import Insert from './pages/insert.js';
+import secret from './Secret'
+
 
 
 
@@ -24,7 +26,7 @@ function App() {
       <div>
         <Nav/>
         <Switch>
-        <Route exact path="/tracker" component={Tracker} />
+        {/* <Route exact path="/tracker" component={Tracker} /> */}
         <Route exact path="/" component={Dashboard} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />
@@ -40,3 +42,5 @@ function App() {
 }
 
 export default App;
+
+

@@ -19,34 +19,7 @@ router.get("/api/user", (req, res) => {
     });
 });
 
-// route for signing up users
-// router.post('/signup',(req,res)=>{
-//   const {name,email,password} = req.body
-//   if(!email || !password || !name){
-//       res.json({error:"please add all the required fields"})
-//   }
-//   User.findOne({email:email})
-//   .then((dbUsers)=> {
-//     if(dbUsers){
-//       return res.status(422).json({error:"user already exists with that email"})
-//     }
-//     const user = new User({
-//       email: email,
-//       password: password,
-//       name: name,
-//     })
-//     user.save()
-//     .then(user=>{
-//       res.json({message:"saved successfully"})
-//     })
-//     .catch(err=>{
-//       console.log(err)
-//     })
-//   })
-//   .catch(err=>{
-//     console.log(err)
-//   })
-// });
+
 
 router.get("/api/images", async (req, res) => {
   const { resources } = await cloudinary.search

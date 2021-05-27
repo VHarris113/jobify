@@ -1,5 +1,5 @@
-
-import React,{useState} from "react";
+import React, { useState } from "react";
+import API from "utils/API";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
@@ -10,66 +10,151 @@ import { FormControl } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import { Badge } from "react-bootstrap";
+import axios from "axios";
 
 function Insert() {
-  const [status, setStatus]= useState("")
+  const [state, setState] = useState({
+    company: "",
+    title: "",
+    location: "",
+    salary: "",
+    url: "",
+    applied: "",
+    followed: "",
+    note: "",
+  });
+  const handleInputChange = (event) => {
+    let value = event.target.value;
+    const name = event.target.name;
+    console.log(name, value);
+    setState({
+      ...state,
+      [name]: value,
+    });
+  };
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    axios
+      .post("/api/tracker", state)
+      .then(function (res) {
+        console.log(JSON.stringify(res.data));
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+    setState({
+      company: "",
+      title: "",
+      location: "",
+      salary: "",
+      url: "",
+      applied: "",
+      followed: "",
+      note: "",
+    });
+  };
   return (
     <Container>
-       <div style={{ display: "block", width: 900, padding: 30 }}>
-       <h4 >Select your status:</h4>
-       </div>
-       <div style={{ display: "block", width: 900, padding: 30 }}>
-      <Button onClick= {()=> setStatus ("Wishlist")} variant="outline-primary">Wishlist</Button>{" "}
-      <Button onClick= {()=> setStatus ("Pending")} variant="outline-secondary">Pending</Button>{" "}
-      <Button onClick= {()=> setStatus ("Denied")} variant="outline-success">Denied</Button>{" "}
-      <Button onClick= {()=> setStatus ("Offer")} variant="outline-warning">Offer</Button>{" "}
+      <div style={{ display: "block", width: 900, padding: 30 }}>
+        <h4>Select your status:</h4>
       </div>
       <div style={{ display: "block", width: 900, padding: 30 }}>
-       <h4> Enter the information requested below:</h4>
-       </div>
+        <Button onClick={() => setState("Wishlist")} variant="outline-primary">
+          Wishlist
+        </Button>{" "}
+        <Button onClick={() => setState("Pending")} variant="outline-secondary">
+          Pending
+        </Button>{" "}
+        <Button onClick={() => setState("Denied")} variant="outline-success">
+          Denied
+        </Button>{" "}
+        <Button onClick={() => setState("Offer")} variant="outline-warning">
+          Offer
+        </Button>{" "}
+
+      </div>
+      <div style={{ display: "block", width: 900, padding: 30 }}>
+        <h4> Enter the information requested below:</h4>
+      </div>
       <div style={{ display: "block", width: 950, padding: 30 }}>
-    
         <Form>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control name = "company" type="text" placeholder="Company:" />
+
+            <Form.Control
+              onChange={(e) => handleInputChange(e)}
+              name="company"
+              type="text"
+              placeholder="Company:"
+            />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control name = "title" type="text" placeholder="Job Title" />
+            <Form.Control
+              onChange={(e) => handleInputChange(e)}
+              name="title"
+              type="text"
+              placeholder="Job Title"
+            />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control name = "location " type="text" placeholder="Location" />
+            <Form.Control
+              onChange={(e) => handleInputChange(e)}
+              name="location "
+              type="text"
+              placeholder="Location"
+            />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control name = "salary" type="number" placeholder="Salary" />
+            <Form.Control
+              onChange={(e) => handleInputChange(e)}
+              name="salary"
+              type="number"
+              placeholder="Salary"
+            />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control name = "url" type="link" placeholder="Listing URL" />
+            <Form.Control name="url" type="link" placeholder="Listing URL" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control name = "applied" type="text" placeholder="Date Applied" />
+            <Form.Control
+              onChange={(e) => handleInputChange(e)}
+              name="applied"
+              type="text"
+              placeholder="Date Applied"
+            />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control name = "followed" type="text" placeholder="Follow Up Date" />
+            <Form.Control
+              onChange={(e) => handleInputChange(e)}
+              name="followed"
+              type="text"
+              placeholder="Follow Up Date"
+            />
 
           </Form.Group>
-
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label></Form.Label>
 
-            <Form.Control value ={useState.Note} name = "note" onChange={handleInputChange} as="textarea" rows={4} placeholder="Notes" />
+            <Form.Control
+              value={useState.Note}
+              name="note"
+              onChange={(e) => handleInputChange(e)}
+              as="textarea"
+              rows={4}
+              placeholder="Notes"
+            />
 
           </Form.Group>
         </Form>
-<br/>
-        <Button variant="primary" type="submit">
-           Submit Form
+        <br />
+        <Button onClick={handleFormSubmit} variant="primary" type="submit">
+          Submit Form
         </Button>
       </div>
       {/* <div className="container">
