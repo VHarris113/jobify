@@ -4,6 +4,8 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 var cors = require("cors");
 
+// const db = mongojs(databaseUrl, collections);
+
 const PORT = process.env.PORT || 3001;
 
 const app = express();

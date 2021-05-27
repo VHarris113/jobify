@@ -1,15 +1,18 @@
-//sign up will have
-//username
-//email
-//password
-//profile_id
+// //sign up will have
+// //username
+// //email
+// //password
+// //profile_id
 
 const monogoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const SignupSchema = new monogoose.Schema({
     key_id: {
-        //add key function here, check old homework
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
     },
     email: {
         type: String,
@@ -26,4 +29,6 @@ const SignupSchema = new monogoose.Schema({
         required: true,
         unique: true,
     }
-})
+});
+
+module.exports = SignupSchema;
