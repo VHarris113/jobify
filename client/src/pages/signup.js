@@ -2,26 +2,22 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-
 function SignUp() {
   const [state, setState] = useState({
     email: "",
     password: "",
   });
-
   const handleInputChange = (event) => {
     // Getting the value and name of the input which triggered the change
     let value = event.target.value;
     const name = event.target.name;
     console.log(name, value);
-
     // Updating the input's state
     setState({
       ...state,
       [name]: value,
     });
   };
-
   const handleFormSubmit = (event) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
@@ -33,13 +29,11 @@ function SignUp() {
       .catch(function (error) {
         console.log(error);
       });
-
     setState({
       email: "",
       password: "",
     });
   };
-
   return (
     <section class="signup">
       <div class="container">
@@ -135,5 +129,4 @@ function SignUp() {
     </section>
   );
 }
-
 export default SignUp;

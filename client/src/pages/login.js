@@ -16,14 +16,12 @@ function Login() {
     let value = event.target.value;
     const name = event.target.name;
     console.log(name, value);
-
     // Updating the input's state
     setState({
       ...state,
       [name]: value,
     });
   };
-
   const handleFormSubmit = (event) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
@@ -35,13 +33,11 @@ function Login() {
       .catch(function (error) {
         console.log(error);
       });
-
     setState({
       email: "",
       password: "",
     });
   };
-
   return (
     <section class="sign-in">
       <div class="container">
@@ -54,7 +50,6 @@ function Login() {
               Create an account
             </a>
           </div>
-
           <div class="signin-form">
             <h2 class="form-title">Log In</h2>
             <form method="POST" class="register-form" id="login-form">
@@ -65,9 +60,9 @@ function Login() {
                 <input
                   onChange={(e) => handleInputChange(e)}
                   type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Your Name"
+                  name="email"
+                  id="email"
+                  placeholder="Your Email"
                 />
               </div>
               <div class="form-group">
@@ -133,5 +128,4 @@ function Login() {
     </section>
   );
 }
-
 export default Login;
