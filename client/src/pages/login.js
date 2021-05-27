@@ -59,7 +59,7 @@ function Login() {
                                 <input onChange={e => handleInputChange(e)} type="password" name="password" id="your_pass" placeholder="Password"/>
                             </div>
                             <div class="form-group">
-                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                <input type="checkbox" name="remember-me" id="remember-me" class="checkbox-effect checkbox-effect-2" />
                                 <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                             </div>
                             <div class="form-group form-button">

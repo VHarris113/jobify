@@ -29,7 +29,6 @@ function SignUp() {
       .catch(function (error) {
         console.log(error);
       });
-
     setState({
       email: "",
       password: "",

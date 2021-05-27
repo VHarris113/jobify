@@ -37,6 +37,7 @@ h6 {
 
 #abouttitle
 {
+  font-family: Montserrat;
   text-align: center;
 }
 #carousel-textbox1 {
@@ -970,6 +971,10 @@ label.valid:after {
   .form-title {
     text-align: center;
   }
+  h1 {
+    font-size: 28px;
+  }
+
   h5 {
     font-size: 14px;
   }
@@ -988,7 +993,30 @@ label.valid:after {
   .formresume {
     margin-left: -520px;
   }
+
+  #carousel-textbox1 {
+    position: initial;
+  }
+
+  #carousel-textbox2 {
+    position: initial;
+  }
+
+  #carousel-textbox3 {
+    position: initial;
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+  }
   
+  #btn-sign-in {
+    padding: 10px;
+  }
+
+  #btn-sign-up {
+    padding: 10px;
+  }
+
 }
 @media screen and (max-width: 400px) {
   .social-login {
