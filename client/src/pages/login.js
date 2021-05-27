@@ -4,9 +4,10 @@ import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
 import API from "utils/API";
 import { set } from "mongoose";
+import { Redirect } from "react-router";
+
 
 function Login() {
-
     const [state, setState] = useState({
         email: "",
         password: ""
@@ -41,7 +42,11 @@ function Login() {
           password: ""
         });
       };
-    
+
+      // function isLoggedIn() {
+      //   return 
+      // }
+    // if (!isLoggedIn()) {
     return (
         <section class="sign-in">
             <div class="container">
@@ -56,7 +61,7 @@ function Login() {
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input onChange={e => handleInputChange(e)} type="text" name="name" id="name" placeholder="Your Name"/>
+                                <input onChange={e => handleInputChange(e)} type="text" name="email" id="email" placeholder="Your Name"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
@@ -82,7 +87,10 @@ function Login() {
                 </div>
             </div>
         </section>
-);
+      );
+    // } else {
+    //   return <Redirect to="/tracker" />;
+    // }
 }
 
 

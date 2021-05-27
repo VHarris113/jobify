@@ -12,8 +12,7 @@ import Gallery from './pages/Gallery.js';
 import Tracker from './pages/tracker';
 import "../src/pages/style.css";
 import Insert from './pages/insert.js';
-
-
+import secret from './Secret';
 
 //<Route exact path="/gallery" component={Gallery} />
 

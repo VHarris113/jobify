@@ -15,16 +15,16 @@ import axios from "axios";
 
 function Insert() {
 
-  const [state, setState] = useState([
-    company: "",
-    title: "",
-    location: "",
-    salary: "",
-    url: "",
-    applied: "",
-    followed: ""
-
-  ])
+  const [state, setState] = useState({
+      company: "",
+      title: "",
+      location: "",
+      salary: "",
+      url: "",
+      applied: "",
+      followed: "",
+      note: ""
+  });
 
   const handleInputChange = event => {
     let value = event.target.value;
@@ -39,8 +39,8 @@ function Insert() {
 
   const handleFormSubmit = event => {
     event.preventDefault();
-    axios.post("/api/login", state)
-    .then(function(response) {
+    axios.post("/api/tracker", state)
+    .then(function(res) {
       console.log(JSON.stringify(res.data));
     })
     .catch(function (err) {
@@ -54,7 +54,8 @@ function Insert() {
       salary: "",
       url: "",
       applied: "",
-      followed: ""
+      followed: "",
+      note: ""
     });
   };
 
