@@ -35,6 +35,10 @@ h6 {
   padding-right: 30px;
 }
 
+#abouttitle
+{
+  text-align: center;
+}
 #carousel-textbox1 {
   background: black;
 }
