@@ -29,6 +29,7 @@ function SignUp() {
       .catch(function (error) {
         console.log(error);
       });
+
     setState({
       email: "",
       password: "",
@@ -128,5 +129,6 @@ function SignUp() {
       </div>
     </section>
   );
+
 }
 export default SignUp;

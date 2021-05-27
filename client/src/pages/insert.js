@@ -11,6 +11,7 @@ import { Button } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import { Badge } from "react-bootstrap";
 import axios from "axios";
+
 function Insert() {
   const [state, setState] = useState({
     company: "",
@@ -70,6 +71,7 @@ function Insert() {
         <Button onClick={() => setState("Offer")} variant="outline-warning">
           Offer
         </Button>{" "}
+
       </div>
       <div style={{ display: "block", width: 900, padding: 30 }}>
         <h4> Enter the information requested below:</h4>
@@ -78,6 +80,7 @@ function Insert() {
         <Form>
           <Form.Group>
             <Form.Label></Form.Label>
+
             <Form.Control
               onChange={(e) => handleInputChange(e)}
               name="company"
@@ -133,9 +136,11 @@ function Insert() {
               type="text"
               placeholder="Follow Up Date"
             />
+
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label></Form.Label>
+
             <Form.Control
               value={useState.Note}
               name="note"
@@ -144,6 +149,7 @@ function Insert() {
               rows={4}
               placeholder="Notes"
             />
+
           </Form.Group>
         </Form>
         <br />
@@ -160,4 +166,6 @@ function Insert() {
     </Container>
   );
 }
+
 export default Insert;
+
