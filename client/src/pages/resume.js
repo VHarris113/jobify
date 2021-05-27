@@ -61,8 +61,8 @@ export default function Upload() {
     };
     return (
       <Container>
-        <div>
-            <h1 className="title">resume review</h1>
+        <div class="resume">
+            <h1 className="title">Resume Review</h1>
             <Alert msg={errMsg} type="danger" />
             <Alert msg={successMsg} type="success" />
             <form onSubmit={handleSubmitFile} className="formresume">
@@ -75,7 +75,7 @@ export default function Upload() {
                     className="form-input"
                 />
                 <button className="btn" type="submit">
-                    Submit
+                    submit
                 </button>
             </form>
             {previewSource && (
@@ -131,7 +131,7 @@ export default function Upload() {
 </Form>
 
 <Button variant="primary" type="submit">
-add a new comment
+Add Comment
 </Button>
                </Container>
     );

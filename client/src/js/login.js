@@ -1,3 +1,5 @@
+
+alert("hello");
 var loginFormHandler = async (event) => {
     event.preventDefault();
 
@@ -53,9 +55,9 @@ var logoutFormHandler = async () => {
         console.log(response);
     }
 };
+console.log(document.querySelector("#register-form"))
+//document.querySelector(".login-form").addEventListener("submit", loginFormHandler);
 
-document.querySelector(".login-form").addEventListener("submit", loginFormHandler);
-
-document.querySelector(".signup-form", signupFormHandler).addEventListener("submit", signupFormHandler);
+document.querySelector(".register-form", signupFormHandler).addEventListener("submit", signupFormHandler);
 
 document.querySelector("#logout").addEventListener("click", logoutFormHandler);

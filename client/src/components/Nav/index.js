@@ -19,13 +19,18 @@ function Nav() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span className="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon">Menu</span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ml-auto text-secondary">
           <li className="nav-item active">
             <a className="nav-link text-success" href="/">
               dashboard <span className="sr-only">(current)</span>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link text-success" href="/about">
+              about
             </a>
           </li>
           <li className="nav-item">
@@ -40,7 +45,7 @@ function Nav() {
           </li>
           <li className="nav-item">
           <a href="/signup"  id = "btn-sign-in"  class="btn btn-info">sign-up</a>
-          </li>
+          </li>    
           {/* <li className="nav-item">
             <a className="nav-link text-success" href="/upload">
               upload

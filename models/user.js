@@ -1,33 +1,37 @@
-//This will call all of the models into one and be called by other pages that need it
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const bcrypt = require("bcrypt");
 
-const userSchema = new Schema({
-  username: {
-    type: String,
-    trim: true,
-    required: "Username is Required",
-  },
+const saltRounds = 10;
 
-  email: {
-    type: String,
-    trim: true,
-    required: "Password is Required",
-  },
-
-  linkedIn: {
-    type: String,
-  },
-
-  gitHub: {
-    type: String,
-  },
-
-  jobTitle: {
-    type: String,
-  },
+const UserSchema = new mongoose.Schema({
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
 });
 
-const User = mongoose.model("User", userSchema);
+UserSchema.pre("save", function (next) {
+  if (this.isNew || this.isModified("password")) {
+    const document = this;
+    bcrypt.hash(this.password, saltRounds, function (err, hashedPassword) {
+      if (err) {
+        next(err);
+      } else {
+        document.password = hashedPassword;
+        next();
+      }
+    });
+  } else {
+    next();
+  }
+});
 
-module.exports = User;
+UserSchema.methods.isCorrectPassword = function (password, callback) {
+  bcrypt.compare(password, this.password, function (err, same) {
+    if (err) {
+      callback(err);
+    } else {
+      callback(err, same);
+    }
+  });
+};
+
+module.exports = mongoose.model("User", UserSchema);
