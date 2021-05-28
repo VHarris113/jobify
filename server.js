@@ -15,7 +15,7 @@ app.use(logger("dev"));
 // Define middleware here
 // Jackson added code
 app.use(express.static("public"));
-app.use(express.urlencoded({ limit: "50mb", extended: true }));
+app.use(express.urlencoded({ limit: "50mb", extended: false }));
 app.use(express.json({ limit: "50mb" }));
 app.use(cors());
 // Serve up static assets (usually on heroku)
@@ -24,7 +24,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  const index = path.join(__dirname, "build", "index.html")
+  res.sendFile(index);
 });
 // Define API routes here
 

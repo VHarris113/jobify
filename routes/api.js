@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const User = require("../models/user");
+const User = require("../models/User");
 const { cloudinary } = require("../utils/cloudinary");
 const mongoose = require("mongoose");
 const withAuth = require("../utils/withAuth");
@@ -18,7 +18,6 @@ router.get("/api/user", (req, res) => {
       res.status(400).json(err);
     });
 });
-
 
 
 router.get("/api/images", async (req, res) => {
