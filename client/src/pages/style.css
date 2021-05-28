@@ -1017,6 +1017,14 @@ label.valid:after {
     padding: 10px;
   }
 
+  #login-form {
+    margin-left: 150px;
+  }
+
+  #register-form {
+    margin-left: 150px;
+  }
+
 }
 @media screen and (max-width: 400px) {
   .social-login {

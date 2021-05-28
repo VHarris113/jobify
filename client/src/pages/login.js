@@ -144,7 +144,7 @@ function Login() {
                 />
               </div>
             </form>
-            <div class="social-login">
+            {/* <div class="social-login">
               <span class="social-label">Or login with</span>
               <ul class="socials">
                 <li>
@@ -163,7 +163,7 @@ function Login() {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
