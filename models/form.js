@@ -25,10 +25,10 @@ const formSchema = new Schema({
     type: String,
   },
   dateApplied: {
-    type: Date,
+    type: String,
   },
   followUpDate: {
-    type: Date,
+    type: String,
   },
   notes: {
     type: String,
