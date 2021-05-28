@@ -2,9 +2,9 @@ const express = require("express");
 const path = require("path");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const routes = require("routes");
 var cors = require("cors");
 const jwt = require('jsonwebtoken');
+const routes = require("./routes");
 
 // const db = mongojs(databaseUrl, collections);
 
@@ -23,10 +23,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.get("*", (req, res) => {
-  const index = path.join(__dirname, "build", "index.html")
-  res.sendFile(index);
-});
+// app.get("*", (req, res) => {
+//   const index = path.join(__dirname, "build", "index.html")
+//   res.sendFile(index);
+// });
 // Define API routes here
 app.use(routes);
 // Define API routes here
@@ -49,7 +49,10 @@ connection.on("error", (error) => {
   console.log("Mongoose error", error);
 });
 
-app.use(require("./routes/api"));
+app.get('/', (req, res) => {
+  res.json('Hello World')
+});
+
 
 // app.listen(PORT, () => {
 //   console.log(`🌎 ==> API server now on port ${PORT}!`);

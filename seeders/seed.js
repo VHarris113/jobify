@@ -3,7 +3,11 @@ const db = require("../models");
 
 mongoose.connect(
     process.env.MONGODB_URI ||
-    "mongodb://localhost/jobify"
+    "mongodb://localhost/jobify", {
+        useNewUrlParser: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+    }
 );
 
 const jobSeed = [
@@ -39,14 +43,13 @@ const jobSeed = [
     },
 ];
 
-db.Job
-    .remove({})
-    .then(() => db.Job.collection.insertMany(jobSeed))
+db.Form.deleteMany({})
+    .then(() => db.Form.collection.insertMany(jobSeed))
     .then(data => {
         console.log(data.result.n + "job records inserted!");
         process.exit(0);
     })
     .catch(err => {
         console.error(err);
-        process.exit(0);
+        process.exit(1);
     })

@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const formRoutes = require("./form-route");
 
-router.us("/insert", formRoutes);
+router.use("/insert", formRoutes);
+
 
 module.exports = router;
