@@ -3,11 +3,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const formSchema = new Schema({
-  userID: {
-    type: String,
-    trim: true,
-    required: "Username is Required",
-  },
   company: {
     type: String,
     trim: true,

@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../models/formModels");
 
 module.exports = {
     findAll: function(req, res) {
