@@ -4,6 +4,7 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 var cors = require("cors");
 const jwt = require('jsonwebtoken');
+const routes = require("./routes");
 
 // const db = mongojs(databaseUrl, collections);
 
@@ -12,8 +13,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(logger("dev"));
-// Define middleware here
-// Jackson added code
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.json({ limit: "50mb" }));
@@ -23,12 +23,12 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   const index = path.join(__dirname, "build", "index.html")
+//   res.sendFile(index);
+// });
 // Define API routes here
-
-
+app.use(routes);
 // Define API routes here
 
 // Send every other request to the React app
@@ -49,7 +49,10 @@ connection.on("error", (error) => {
   console.log("Mongoose error", error);
 });
 
-app.use(require("./routes/api"));
+app.get('/', (req, res) => {
+  res.json('Hello World')
+});
+
 
 // app.listen(PORT, () => {
 //   console.log(`🌎 ==> API server now on port ${PORT}!`);

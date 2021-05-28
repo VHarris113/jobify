@@ -8,7 +8,7 @@ const formSchema = new Schema({
     trim: true,
     required: "Username is Required",
   },
-  Company: {
+  company: {
     type: String,
     trim: true,
   },
@@ -19,7 +19,7 @@ const formSchema = new Schema({
     type: String,
   },
   salary: {
-    type: String,
+    type: Number,
   },
    listingUrl: {
     type: String,
@@ -30,9 +30,11 @@ const formSchema = new Schema({
   followUpDate: {
     type: String,
   },
-  Notes: {
+  notes: {
     type: String,
   },
 });
 
-module.exports = mongoose.model("form", formSchema);
+const Form = mongoose.model("Form", formSchema);
+
+module.exports = Form;
