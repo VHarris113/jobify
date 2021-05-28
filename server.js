@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const logger = require("morgan");
 const mongoose = require("mongoose");
+const routes = require("routes");
 var cors = require("cors");
 const jwt = require('jsonwebtoken');
 
@@ -12,10 +13,9 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(logger("dev"));
-// Define middleware here
-// Jackson added code
+
 app.use(express.static("public"));
-app.use(express.urlencoded({ limit: "50mb", extended: false }));
+app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.json({ limit: "50mb" }));
 app.use(cors());
 // Serve up static assets (usually on heroku)
@@ -28,8 +28,7 @@ app.get("*", (req, res) => {
   res.sendFile(index);
 });
 // Define API routes here
-
-
+app.use(routes);
 // Define API routes here
 
 // Send every other request to the React app

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-// import API from "utils/API";
-// import { Link, useParams } from "react-router-dom";
-// import { Col, Row, Container } from "../components/Grid";
-// import Jumbotron from "../components/Jumbotron";
-// import ReactDOM, { render } from "react-dom";
-// import { Form } from "react-bootstrap";
-// import { InputGroup } from "react-bootstrap";
-// import { FormControl } from "react-bootstrap";
-// import { Button } from "react-bootstrap";
-// import Navbar from "react-bootstrap/Navbar";
-// import { Badge } from "react-bootstrap";
-// import axios from "axios";
+import API from "utils/API";
+import { Link, useParams } from "react-router-dom";
+import { Col, Row, Container } from "../components/Grid";
+import Jumbotron from "../components/Jumbotron";
+import ReactDOM, { render } from "react-dom";
+import { Form } from "react-bootstrap";
+import { InputGroup } from "react-bootstrap";
+import { FormControl } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
+import { Badge } from "react-bootstrap";
+import axios from "axios";
 
 export const AddJob = () => {
 
@@ -29,9 +29,14 @@ export const AddJob = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        job: job,
-        applied: false,
-        dates: []
+        userID: String,
+        company: String,
+        jobTitle: job,
+        salary: String,
+        listingUrl: String,
+        dateApplied: Date,
+        followUpDate: Date,
+        notes: String
       })
     })
     .then(() => {
@@ -156,52 +161,7 @@ export default AddJob;
 //   );
 // }
 // }
-// // function Insert() {
 
-//   // const [state, setState] = useState({
-//   //     company: "",
-//   //     title: "",
-//   //     location: "",
-//   //     salary: "",
-//   //     url: "",
-//   //     applied: "",
-//   //     followed: "",
-//   //     note: ""
-//   // });
-
-//   // const handleInputChange = event => {
-//   //   let value = event.target.value;
-//   //   const name = event.target.name;
-//   //   console.log(name, value)
-
-//   //   setState({
-//   //     ...state,
-//   //     [name]: value
-//   //   });
-//   // };
-
-//   // const handleFormSubmit = event => {
-//   //   event.preventDefault();
-//   //   axios.post("/api/tracker", state)
-//   //   .then(function(res) {
-//   //     console.log(JSON.stringify(res.data));
-//   //   })
-//   //   .catch(function (err) {
-//   //     console.log(err);
-//   //   });
-
-
-//   //   setState({
-//   //     company: "",
-//   //     title: "",
-//   //     location: "",
-//   //     salary: "",
-//   //     url: "",
-//   //     applied: "",
-//   //     followed: "",
-//   //     note: ""
-//   //   });
-//   // };
 
   
 // // }

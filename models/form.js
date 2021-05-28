@@ -8,7 +8,7 @@ const formSchema = new Schema({
     trim: true,
     required: "Username is Required",
   },
-  Company: {
+  company: {
     type: String,
     trim: true,
   },
@@ -19,18 +19,18 @@ const formSchema = new Schema({
     type: String,
   },
   salary: {
-    type: String,
+    type: Number,
   },
    listingUrl: {
     type: String,
   },
   dateApplied: {
-    type: String,
+    type: Date,
   },
   followUpDate: {
-    type: String,
+    type: Date,
   },
-  Notes: {
+  notes: {
     type: String,
   },
 });
