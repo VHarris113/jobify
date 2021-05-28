@@ -110,6 +110,10 @@ button {
   border-color: darkslategray;
   font-size: 30px;
   background-color: #45b1c9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #btn-sign-in {
@@ -141,6 +145,10 @@ button {
   border-color: darkslategray;
   font-size: 30px;
   background-color: #ff1152;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 #offer {
   border-style: solid;
@@ -148,6 +156,10 @@ button {
   border-color: darkslategray;
   font-size: 30px;
   background-color: #2cfb6a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #pending {
@@ -156,6 +168,10 @@ button {
   border-color: darkslategray;
   font-size: 30px;
   background-color: #ffe74e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 table {
@@ -1021,12 +1037,25 @@ label.valid:after {
   }
 }
 @media screen and (max-width: 400px) {
+  
+.navbar-nav
+{
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+}
   .social-login {
     flex-direction: column;
     -moz-flex-direction: column;
     -webkit-flex-direction: column;
     -o-flex-direction: column;
     -ms-flex-direction: column;
+  }
+
+  .badges-space
+  {
+    margin-left: 100px;
+    margin-right: 100px;
   }
 
   .social-label {
