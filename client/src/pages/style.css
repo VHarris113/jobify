@@ -35,8 +35,7 @@ h6 {
   padding-right: 30px;
 }
 
-#abouttitle
-{
+#abouttitle {
   font-family: Montserrat;
   text-align: center;
 }
@@ -864,9 +863,6 @@ label.valid:after {
 }
 
 @media screen and (max-width: 1200px) {
-
-
-
   html {
     min-width: 1000px;
   }
@@ -882,7 +878,7 @@ label.valid:after {
     max-width: fit-content;
     width: 950px;
   }
-  
+
   .container {
     width: calc(100% - 30px);
     max-width: 100%;
@@ -891,7 +887,6 @@ label.valid:after {
   .form-control {
     width: 825px;
   }
-
 }
 @media screen and (min-width: 1024px) {
   .container {
@@ -1008,7 +1003,7 @@ label.valid:after {
     justify-content: center;
     align-content: center;
   }
-  
+
   #btn-sign-in {
     padding: 10px;
   }
@@ -1024,7 +1019,6 @@ label.valid:after {
   #register-form {
     margin-left: 150px;
   }
-
 }
 @media screen and (max-width: 400px) {
   .social-login {
