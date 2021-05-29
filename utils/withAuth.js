@@ -1,27 +1,28 @@
-const jwt = require('jsonwebtoken');
-const secret = 'cheesecake';
+const jwt = require("jsonwebtoken");
+const secret = "cheesecake";
 
-const withAuth = function(req, res, next) {
-  const token = 
-      req.body.token ||
-      req.query.token ||
-      req.headers['x-access-token'] ||
-      req.cookies.token;
 
-  if (!token) {
-    res.status(401).send('Unauthorized: No token provided');
-  } else {
-    jwt.verify(token, secret, function(err, decoded) {
+const withAuth = function (req, res, next) {
+  const authHeader = req.headers.cookie;
+
+  if (authHeader) {
+    console.log("authHeader", authHeader)
+    const token = authHeader.split("=")[1];
+    console.log(token)
+    
+
+    jwt.verify(token, secret, (err, user) => {
       if (err) {
-        res.status(401).send('Unauthorized: Invalid token');
-      } else {
-        req.email = decoded.email;
-        res.render("/tracker");
-        console.log("We are now logged in and rendering the new page");
-        next();
+        console.log("err", err);
+        return res.sendStatus(403);
       }
+
+      req.user = user;
+      next();
     });
+  } else {
+    res.sendStatus(401);
   }
-}
+};
 
 module.exports = withAuth;

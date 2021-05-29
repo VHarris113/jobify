@@ -5,12 +5,14 @@ import { Col, Row, Container } from "../components/Grid";
 import API from "utils/API";
 import { set } from "mongoose";
 import { Redirect } from "react-router";
+import { useHistory } from "react-router-dom";
 
 function Login() {
   const [state, setState] = useState({
     email: "",
     password: "",
   });
+  const history = useHistory()
 
   const handleInputChange = (event) => {
     // Getting the value and name of the input which triggered the change
@@ -29,7 +31,11 @@ function Login() {
     axios
       .post("/api/login", state)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
+        console.log(response);
+        if (response.status === 200) {
+          //do a redirect
+         history.push("/tracker")
+        }
       })
       .catch(function (error) {
         console.log(error);

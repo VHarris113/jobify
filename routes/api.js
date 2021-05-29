@@ -9,7 +9,7 @@ const secret = "cheesecake";
 
 // Route for getting users from the database
 router.get("/api/user", (req, res) => {
-  User.find({})
+  User.find({_id: req.user.id})
     .then((dbUsers) => {
       res.json(dbUsers);
       //console.log(dbUsers);
@@ -18,7 +18,6 @@ router.get("/api/user", (req, res) => {
       res.status(400).json(err);
     });
 });
-
 
 router.get("/api/images", async (req, res) => {
   const { resources } = await cloudinary.search
@@ -56,7 +55,7 @@ router.get("/api/secret", withAuth, function (req, res) {
 
 router.post("/api/signup", function (req, res) {
   const { email, password } = req.body;
-  console.log(req.body)
+  console.log(req.body);
   const user = new User({ email, password });
   user.save(function (err) {
     if (err) {
@@ -70,7 +69,7 @@ router.post("/api/signup", function (req, res) {
 
 router.post("/api/login", function (req, res) {
   const { email, password } = req.body;
-  User.findOne({ email }, function (err, user) {
+  User.findOne({ email, }, function (err, user) {
     if (err) {
       console.error(err);
       res.status(500).json({
@@ -92,11 +91,12 @@ router.post("/api/login", function (req, res) {
           });
         } else {
           // Issue token
-          const payload = { email };
+          const payload = { email, id: user._id };
           const token = jwt.sign(payload, secret, {
             expiresIn: "1h",
           });
           res.cookie("token", token, { httpOnly: true }).sendStatus(200);
+          console.log(token);
         }
       });
     }
@@ -104,7 +104,7 @@ router.post("/api/login", function (req, res) {
 });
 
 router.get("/checkToken", withAuth, function (req, res) {
-  res.sendStatus(200);
+  res.status(200).end();
 });
 
 module.exports = router;

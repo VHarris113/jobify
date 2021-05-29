@@ -4,6 +4,7 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 var cors = require("cors");
 const jwt = require('jsonwebtoken');
+const withAuth = require('./utils/withAuth');
 const routes = require("./routes");
 
 // const db = mongojs(databaseUrl, collections);
@@ -24,8 +25,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // app.get("*", (req, res) => {
-//   const index = path.join(__dirname, "build", "index.html")
-//   res.sendFile(index);
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 // Define API routes here
 app.use(routes);
