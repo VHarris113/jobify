@@ -9,6 +9,7 @@
     "cloudinary-react": "^1.7.0",
     "enhanced-resolve": "^4.5.0",
     "install": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
     "npm": "^7.14.0",
     "react": "^16.13.1",
     "react-dom": "^16.14.0",
