@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const db = require("../models");
+const db = require("../models/formModels");
 
 mongoose.connect(
     process.env.MONGODB_URI ||
