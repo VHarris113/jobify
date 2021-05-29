@@ -99,7 +99,10 @@ function SignUp() {
                     <span></span>
                   </span>
                   I agree all statements in{" "}
-                  <a href="#" class="term-service">
+                  <a
+                    href="https://www.termsservicetemplate.com/live.php?token=03czSWTdWjGrlr5nOFLMDEJrwzgGqqL9"
+                    class="term-service"
+                  >
                     Terms of service
                   </a>
                 </label>
@@ -128,6 +131,5 @@ function SignUp() {
       </div>
     </section>
   );
-
 }
 export default SignUp;
