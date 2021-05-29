@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import API from "utils/API";
-import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
-import ReactDOM from "react-dom";
-import { Form } from "react-bootstrap";
-import { InputGroup } from "react-bootstrap";
+import { Form, FormGroup } from "react-bootstrap";
 import { FormControl } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import Navbar from "react-bootstrap/Navbar";
-import { Badge } from "react-bootstrap";
+import { Button, ButtonGroup } from "react-bootstrap";
 import axios from "axios";
+import sendMail from "../components/cron";
+import {DropdownButton} from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
+import { Component } from 'react';
+
+
 
 function Insert() {
 
@@ -35,8 +34,10 @@ function Insert() {
       [name]: value
     });
   };
+ 
 
   const handleFormSubmit = event => {
+    sendMail()
     event.preventDefault();
     axios.post("/api/tracker", state)
     .then(function(res) {
@@ -58,17 +59,21 @@ function Insert() {
       note: ""
     });
   };
+ 
+    
 
   return (
     <Container>
+
        <div style={{ display: "block", width: 900, padding: 30 }}>
        <h4 >Select your status:</h4>
+
        </div>
        <div style={{ display: "block", width: 900, padding: 30 }}>
-      <Button onClick= {()=> setState ("Wishlist")} variant="outline-primary">Wishlist</Button>{" "}
-      <Button onClick= {()=> setState ("Pending")} variant="outline-secondary">Pending</Button>{" "}
-      <Button onClick= {()=> setState ("Denied")} variant="outline-success">Denied</Button>{" "}
-      <Button onClick= {()=> setState ("Offer")} variant="outline-warning">Offer</Button>{" "}
+      <Button onClick= {()=> setState ("Wishlist")} variant="outline-info">Wishlist</Button>{" "}
+      <Button onClick= {()=> setState ("Pending")} variant="outline-warning">Pending</Button>{" "}
+      <Button onClick= {()=> setState ("Denied")} variant="outline-danger">Denied</Button>{" "}
+      <Button onClick= {()=> setState ("Offer")} variant="outline-success">Offer</Button>{" "}
 
       </div>
       <div style={{ display: "block", width: 900, padding: 30 }}>
@@ -114,21 +119,36 @@ function Insert() {
             <Form.Control value ={useState.Note} name = "note" onChange={e => handleInputChange(e)} as="textarea" rows={4} placeholder="Notes" />
 
           </Form.Group>
-        </Form>
+          
+          
+          <Button variant="outline-primary" href="#/action">Follow up</Button>{' '}
+  <Button variant="outline-secondary">No Follow up</Button>{' '}
+  <Dropdown>
+  <Dropdown.Toggle variant="success" id="dropdown-basic">
+    Follow Up Frequency
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-1">Daily</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">Weekly</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Bi-Weekly</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+
+
+      </Form>
+     
+        
 <br/>
         <Button onClick={handleFormSubmit} variant="primary" type="submit">
            Submit Form
 
         </Button>
       </div>
-      {/* <div className="container">
-<div class="form-floating">
-<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-<label for="floatingTextarea">Comments</label>
-</div>
-  </div>          */}
+      
     </Container>
   );
+      
 }
 
 export default Insert;
