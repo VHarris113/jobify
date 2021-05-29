@@ -13,7 +13,7 @@ export default function withAuth(ComponentToProtect) {
     };
 
     componentDidMount() {
-      axios.get('/checkToken')
+      axios.get('/api/checkToken')
         .then(res => {
           if (res.status === 200) {
             this.setState({ loading: false });

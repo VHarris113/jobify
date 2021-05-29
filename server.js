@@ -28,7 +28,6 @@ if (process.env.NODE_ENV === "production") {
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 // Define API routes here
-app.use(routes);
 // Define API routes here
 
 // Send every other request to the React app
@@ -49,11 +48,8 @@ connection.on("error", (error) => {
   console.log("Mongoose error", error);
 });
 
-app.get('/', (req, res) => {
-  res.json('Hello World')
-});
 
-
+app.use(routes);
 // app.listen(PORT, () => {
 //   console.log(`🌎 ==> API server now on port ${PORT}!`);
 // });
