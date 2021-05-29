@@ -12,7 +12,7 @@ function Login() {
     email: "",
     password: "",
   });
-  const history = useHistory()
+  const history = useHistory();
 
   const handleInputChange = (event) => {
     // Getting the value and name of the input which triggered the change
@@ -31,10 +31,10 @@ function Login() {
     axios
       .post("/api/login", state)
       .then(function (response) {
-        console.log(response);
+        console.log("***", response);
         if (response.status === 200) {
           //do a redirect
-         history.push("/tracker")
+          history.push("/tracker");
         }
       })
       .catch(function (error) {

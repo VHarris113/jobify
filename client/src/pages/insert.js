@@ -1,169 +1,92 @@
 import React, { Component } from "react";
-import API from "utils/API";
-import { Link, useParams } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
-import ReactDOM, { render } from "react-dom";
-import { Form } from "react-bootstrap";
-import { InputGroup } from "react-bootstrap";
-import { FormControl } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import Navbar from "react-bootstrap/Navbar";
-import { Badge } from "react-bootstrap";
-import axios from "axios";
+import "./style.css";
 
-class Job extends Component {
+class Form extends Component {
+  // Setting the component's initial state
   state = {
-    job: [],
+    firstName: "",
+    lastName: "",
+    password: ""
   };
 
-  componentDidMount() {
-    this.getSavedJobs();
-  }
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    let value = event.target.value;
+    const name = event.target.name;
 
-  handleInputChange = (event) => {
-    const { name, value } = event.target;
+    if (name === "password") {
+      value = value.substring(0, 15);
+    }
+    // Updating the input's state
     this.setState({
-      [name]: value,
+      [name]: value
     });
   };
 
-  getSavedJobs = () => {
-    API.getSavedJobs()
-      .then((res) =>
-        this.setState({
-          job: res.data,
-        })
-      )
-      .catch((err) => console.log(err));
+  handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    event.preventDefault();
+    if (!this.state.firstName || !this.state.lastName) {
+      alert("Fill out your first and last name please!");
+    } else if (this.state.password.length < 6) {
+      alert(
+        `Choose a more secure password ${this.state.firstName} ${this.state
+          .lastName}`
+      );
+    } else {
+      alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+    }
 
-    return (
-      <Container>
-        <div style={{ display: "block", width: 900, padding: 30 }}>
-          <h4>Select your status:</h4>
-        </div>
-        <div style={{ display: "block", width: 900, padding: 30 }}>
-          <Button
-            onClick={() => setState("Wishlist")}
-            variant="outline-primary"
-          >
-            Wishlist
-          </Button>{" "}
-          <Button
-            onClick={() => setState("Pending")}
-            variant="outline-secondary"
-          >
-            Pending
-          </Button>{" "}
-          <Button onClick={() => setState("Denied")} variant="outline-success">
-            Denied
-          </Button>{" "}
-          <Button onClick={() => setState("Offer")} variant="outline-warning">
-            Offer
-          </Button>{" "}
-        </div>
-        <div style={{ display: "block", width: 900, padding: 30 }}>
-          <h4> Enter the information requested below:</h4>
-        </div>
-        <div style={{ display: "block", width: 950, padding: 30 }}>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group>
-              <Form.Label></Form.Label>
-
-              <Form.Control
-                required
-                onChange={jobUpdate}
-                name="company"
-                type="text"
-                placeholder="Company:"
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label></Form.Label>
-              <Form.Control
-                required
-                onChange={jobUpdate}
-                name="title"
-                type="text"
-                placeholder="Job Title"
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label></Form.Label>
-              <Form.Control
-                required
-                onChange={jobUpdate}
-                name="location "
-                type="text"
-                placeholder="Location"
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label></Form.Label>
-              <Form.Control
-                required
-                onChange={jobUpdate}
-                name="salary"
-                type="number"
-                placeholder="Salary"
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label></Form.Label>
-              <Form.Control
-                onChange={jobUpdate}
-                name="url"
-                type="link"
-                placeholder="Listing URL"
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label></Form.Label>
-              <Form.Control
-                required
-                onChange={jobUpdate}
-                name="applied"
-                type="text"
-                placeholder="Date Applied"
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label></Form.Label>
-              <Form.Control
-                required
-                onChange={jobUpdate}
-                name="followed"
-                type="text"
-                placeholder="Follow Up Date"
-              />
-            </Form.Group>
-            <Form.Group controlId="exampleForm.ControlTextarea1">
-              <Form.Label></Form.Label>
-
-              <Form.Control
-                value={useState.Note}
-                name="note"
-                onChange={(e) => handleInputChange(e)}
-                as="textarea"
-                rows={4}
-                placeholder="Notes"
-              />
-            </Form.Group>
-          </Form>
-          <br />
-          <Button type="submit" variant="primary" type="submit">
-            Submit Form
-          </Button>
-        </div>
-        {/* <div className="container">
-<div class="form-floating">
-<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-<label for="floatingTextarea">Comments</label>
-</div>
-  </div>          */}
-      </Container>
-    );
+    this.setState({
+      firstName: "",
+      lastName: "",
+      password: ""
+    });
   };
+
+  render() {
+    // Notice how each input has a `value`, `name`, and `onChange` prop
+    return (
+      <div>
+        <p>
+          Hello {this.state.firstName} {this.state.lastName}
+        </p>
+        <form className="form">
+          <input
+            value={this.state.firstName}
+            name="firstName"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="First Name"
+          />
+          <input
+            value={this.state.lastName}
+            name="lastName"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Last Name"
+          />
+          <input
+            value={this.state.password}
+            name="password"
+            onChange={this.handleInputChange}
+            type="password"
+            placeholder="Password"
+          />
+          <button onClick={this.handleFormSubmit}>Submit</button>
+        </form>
+      </div>
+    );
+  }
 }
 
-export default Job;
+
+// <Link to={`${props.match.url}/learn`} role="button" className="btn btn-link">
+// Learn More
+// </Link>{" "}
+// <Link to="/contact" role="button" className="btn btn-link">
+// Learn Less
+// </Link>
+// <Route exact path={`${props.match.url}/learn`} component={Learn} />
+
+export default Form;
