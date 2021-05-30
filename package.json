@@ -38,5 +38,13 @@
     "react-bootstrap": "^1.6.0",
     "react-responsive-carousel": "^3.2.18",
     "react-router-dom": "^5.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VHarris113/jobify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VHarris113/jobify/issues"
+  },
+  "homepage": "https://github.com/VHarris113/jobify#readme"
 }
