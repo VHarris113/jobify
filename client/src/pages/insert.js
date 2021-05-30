@@ -24,13 +24,16 @@ function Insert() {
       note: ""
   });
 
-  const handleInputChange = event => {
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
     let value = event.target.value;
     const name = event.target.name;
-    console.log(name, value)
 
-    setState({
-      ...state,
+    if (name === "password") {
+      value = value.substring(0, 15);
+    }
+    // Updating the input's state
+    this.setState({
       [name]: value
     });
   };
@@ -39,24 +42,21 @@ function Insert() {
   const handleFormSubmit = event => {
     sendMail()
     event.preventDefault();
-    axios.post("/api/tracker", state)
-    .then(function(res) {
-      console.log(JSON.stringify(res.data));
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
+    if (!this.state.firstName || !this.state.lastName) {
+      alert("Fill out your first and last name please!");
+    } else if (this.state.password.length < 6) {
+      alert(
+        `Choose a more secure password ${this.state.firstName} ${this.state
+          .lastName}`
+      );
+    } else {
+      alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+    }
 
-
-    setState({
-      company: "",
-      title: "",
-      location: "",
-      salary: "",
-      url: "",
-      applied: "",
-      followed: "",
-      note: ""
+    this.setState({
+      firstName: "",
+      lastName: "",
+      password: ""
     });
   };
  
@@ -151,5 +151,13 @@ function Insert() {
       
 }
 
-export default Insert;
 
+// <Link to={`${props.match.url}/learn`} role="button" className="btn btn-link">
+// Learn More
+// </Link>{" "}
+// <Link to="/contact" role="button" className="btn btn-link">
+// Learn Less
+// </Link>
+// <Route exact path={`${props.match.url}/learn`} component={Learn} />
+
+export default Form;

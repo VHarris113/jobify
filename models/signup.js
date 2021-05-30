@@ -9,7 +9,7 @@ const bcrypt = require("bcrypt");
 
 const SignupSchema = new monogoose.Schema({
     key_id: {
-        type: DataTypes.INTEGER,
+        type: Number,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,

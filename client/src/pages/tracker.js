@@ -8,24 +8,24 @@ function Tracker(props) {
   return (
       <Container >
  
-            <div  className="row">
+            <div  className="row" style={{marginRight: 100, marginLeft: 100}} >
             <div className="badge col md-1">
-                <button  id= "wishlist" style={{ width:  200, height:  200}}  type="button" class="btn ">
-                Wishlist<span class="badge badge-secondary"> 1</span>
+                <button  id= "wishlist" style={{ width:  150, height:  150}}  type="button" class="btn ">
+                <span>Wishlist</span><span class="badge badge-secondary"> 1</span>
                 </button>
             </div>
             <div className="badge col md-1">
-                <button id= "pending"  style={{ width:  200, height:  200}}  type="button" class="btn ">
+                <button id= "pending"  style={{ width: 150, height:  150}}  type="button" class="btn ">
                   Pending <span class="badge badge-secondary"> 3</span>
                 </button>
             </div>
             <div  className="badge col md-1">
-                <button  id= "denied"  style={{ width:  200, height:  200}} type="button" class="btn ">
+                <button  id= "denied"  style={{ width:  150, height:  150}} type="button" class="btn ">
                   Denied <span class="badge badge-secondary"> 3</span>
                 </button>
             </div>
             <div className="badge col md-1">
-                <button  id= "offer"  style={{ width:  200, height:  200}}  type="button" class="btn ">
+                <button  id= "offer"  style={{ width:  150, height:  150}}  type="button" class="btn ">
                   Offer <span class="badge badge-secondary"> 3</span>
                 </button>
             </div>

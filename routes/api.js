@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const User = require("../models/user");
+const User = require("../models/User");
 const { cloudinary } = require("../utils/cloudinary");
 const mongoose = require("mongoose");
 const withAuth = require("../utils/withAuth");
@@ -8,8 +8,8 @@ const secret = "cheesecake";
 //*********** Cloudinary **********/
 
 // Route for getting users from the database
-router.get("/api/user", (req, res) => {
-  User.find({})
+router.get("/user", (req, res) => {
+  User.find({_id: req.user.id})
     .then((dbUsers) => {
       res.json(dbUsers);
       //console.log(dbUsers);
@@ -19,9 +19,7 @@ router.get("/api/user", (req, res) => {
     });
 });
 
-
-
-router.get("/api/images", async (req, res) => {
+router.get("/images", async (req, res) => {
   const { resources } = await cloudinary.search
     .expression("folder:dev_setups")
     .sort_by("public_id", "desc")
@@ -31,7 +29,7 @@ router.get("/api/images", async (req, res) => {
   const publicIds = resources.map((file) => file.public_id);
   res.send(publicIds);
 });
-router.post("/api/upload", async (req, res) => {
+router.post("/upload", async (req, res) => {
   try {
     const fileStr = req.body.data;
     const uploadResponse = await cloudinary.uploader.upload(fileStr, {
@@ -47,17 +45,17 @@ router.post("/api/upload", async (req, res) => {
 
 /********Auth*********/
 
-// router.get('/api/home', function(req, res) {
+// router.get('/home', function(req, res) {
 //   res.send('Welcome!');
 // });
 
-router.get("/api/secret", withAuth, function (req, res) {
+router.get("/secret", withAuth, function (req, res) {
   res.send("The password is potato");
 });
 
-router.post("/api/signup", function (req, res) {
+router.post("/signup", function (req, res) {
   const { email, password } = req.body;
-  console.log(req.body)
+  console.log(req.body);
   const user = new User({ email, password });
   user.save(function (err) {
     if (err) {
@@ -69,9 +67,9 @@ router.post("/api/signup", function (req, res) {
   });
 });
 
-router.post("/api/login", function (req, res) {
+router.post("/login", function (req, res) {
   const { email, password } = req.body;
-  User.findOne({ email }, function (err, user) {
+  User.findOne({ email, }, function (err, user) {
     if (err) {
       console.error(err);
       res.status(500).json({
@@ -93,11 +91,12 @@ router.post("/api/login", function (req, res) {
           });
         } else {
           // Issue token
-          const payload = { email };
+          const payload = { email, id: user._id };
           const token = jwt.sign(payload, secret, {
             expiresIn: "1h",
           });
           res.cookie("token", token, { httpOnly: true }).sendStatus(200);
+          console.log(token);
         }
       });
     }
@@ -105,7 +104,7 @@ router.post("/api/login", function (req, res) {
 });
 
 router.get("/checkToken", withAuth, function (req, res) {
-  res.sendStatus(200);
+  res.status(200).end();
 });
 
 module.exports = router;
