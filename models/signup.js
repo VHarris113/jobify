@@ -7,7 +7,7 @@
 const monogoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const SignupSchema = new monogoose.Schema({
+const Signup = new monogoose.Schema({
     key_id: {
         type: Number,
         allowNull: false,
@@ -31,4 +31,4 @@ const SignupSchema = new monogoose.Schema({
     }
 });
 
-module.exports = SignupSchema;
+module.exports = Signup;
