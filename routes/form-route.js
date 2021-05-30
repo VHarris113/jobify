@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const userController = require("../controllers/userController");
 
-router
-    .route('/insert')
+router.route('/insert')
+    .get(userController.findAll)
     .post(userController.create);
 
 router
