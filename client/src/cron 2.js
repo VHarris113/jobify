@@ -1,7 +1,8 @@
 const express = require('express');
-const fs = require('fs'); // previous example
+const fs = require('fs'); 
+
+// previous example
 // const shell = require('shelljs'); // previous example
-const nodemailer = require('nodemailer');
 
 // TODO
 // make a request to your app's backend
@@ -14,11 +15,11 @@ const nodemailer = require('nodemailer');
 let transporter = nodemailer.createTransport({
     // host: 'hotmail.com',
     // port:  465,
-    service: "hotmail",
+    service: "gmail",
     // secure: true,
     auth: {
-        user: "(enter sender email)",
-        pass: "(enter sender password)"
+        user: "jobifyme86@gmail.com",
+        pass: "G9LfxNffFrs%T2%"
     }
   });
   
