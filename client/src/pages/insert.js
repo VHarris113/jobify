@@ -72,19 +72,19 @@ function Insert() {
           <Form.Group>
             <Form.Label></Form.Label>
 
-            <Form.Control onChange={e => handleInputChange(e)} name = "company" type="text" placeholder="Company:" />
+            <Form.Control onChange={e => handleFormSubmit(e)} name = "company" type="text" placeholder="Company:" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control onChange={e => handleInputChange(e)} name = "title" type="text" placeholder="Job Title" />
+            <Form.Control onChange={e => handleFormSubmit(e)} name = "title" type="text" placeholder="Job Title" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control onChange={e => handleInputChange(e)} name = "location " type="text" placeholder="Location" />
+            <Form.Control onChange={e => handleFormSubmit(e)} name = "location " type="text" placeholder="Location" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control onChange={e => handleInputChange(e)} name = "salary" type="number" placeholder="Salary" />
+            <Form.Control onChange={e => handleFormSubmit(e)} name = "salary" type="number" placeholder="Salary" />
 
           </Form.Group>
           <Form.Group>
@@ -93,18 +93,18 @@ function Insert() {
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control onChange={e => handleInputChange(e)} name = "applied" type="text" placeholder="Date Applied" />
+            <Form.Control onChange={e => handleFormSubmit(e)} name = "applied" type="text" placeholder="Date Applied" />
           </Form.Group>
           <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control onChange={e => handleInputChange(e)} name = "followed" type="text" placeholder="Follow Up Date" />
+            <Form.Control onChange={e => handleFormSubmit(e)} name = "followed" type="text" placeholder="Follow Up Date" />
 
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label></Form.Label>
 
 
-            <Form.Control value ={useState.Note} name = "note" onChange={e => handleInputChange(e)} as="textarea" rows={4} placeholder="Notes" />
+            <Form.Control value ={useState.Note} name = "note" onChange={e => handleFormSubmit(e)} as="textarea" rows={4} placeholder="Notes" />
 
           </Form.Group>
           
