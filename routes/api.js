@@ -1,15 +1,15 @@
 const router = require("express").Router();
-const User = require("../models/User");
 const { cloudinary } = require("../utils/cloudinary");
 const mongoose = require("mongoose");
 const withAuth = require("../utils/withAuth");
 const jwt = require("jsonwebtoken");
 const secret = "cheesecake";
+const { Resume, User } = require("../models");
 //*********** Cloudinary **********/
 
 // Route for getting users from the database
 router.get("/user", (req, res) => {
-  User.find({_id: req.user.id})
+  User.find({ _id: req.user.id })
     .then((dbUsers) => {
       res.json(dbUsers);
       //console.log(dbUsers);
@@ -29,18 +29,33 @@ router.get("/images", async (req, res) => {
   const publicIds = resources.map((file) => file.public_id);
   res.send(publicIds);
 });
+
 router.post("/upload", async (req, res) => {
   try {
     const fileStr = req.body.data;
     const uploadResponse = await cloudinary.uploader.upload(fileStr, {
       upload_preset: "dev_setups",
     });
-    console.log(uploadResponse);
+    console.log("req.body", req.body.userEmail);
+
+    const userId = await User.findOne({ email: req.body.userEmail }).then(
+      (dbUsers) => {
+        console.log(dbUsers);
+        //return the user inside here then you are good
+        return(User)
+      } 
+    );
+
+    Resume.create({
+      resumeUrl: uploadResponse.secure_url,
+      userId: userId,
+    });
+
     res.json({ msg: "upload successful" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ err: "Something went wrong" });
-  }
+  } 
 });
 
 /********Auth*********/
@@ -69,7 +84,7 @@ router.post("/signup", function (req, res) {
 
 router.post("/login", function (req, res) {
   const { email, password } = req.body;
-  User.findOne({ email, }, function (err, user) {
+  User.findOne({ email }, function (err, user) {
     if (err) {
       console.error(err);
       res.status(500).json({
