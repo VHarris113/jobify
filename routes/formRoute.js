@@ -7,7 +7,7 @@ router.route('/insert')
 
 router
     .route("/:id")
-    .get(userController.findById)
+    //.get(userController.findById)
     .put(userController.update)
     .delete(userController.remove);
 

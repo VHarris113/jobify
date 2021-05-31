@@ -11,6 +11,7 @@ export default function Resume() {
   const [selectedFile, setSelectedFile] = useState();
   const [successMsg, setSuccessMsg] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const [resumeUrl, setResumeUrl] = useState(null);
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
     previewFile(file);
@@ -57,6 +58,7 @@ export default function Resume() {
       setFileInputState("");
       setPreviewSource("");
       setSuccessMsg("Image uploaded successfully");
+      setResumeUrl(data.resumeUrl);
     } catch (err) {
       console.error(err);
       setErrMsg("Something went wrong!");
@@ -135,7 +137,7 @@ export default function Resume() {
       <Button variant="primary" type="submit">
         Add Comment
       </Button>
-      <Gallery />
+      <Gallery resumeUrl={resumeUrl} />
     </Container>
   );
 }
