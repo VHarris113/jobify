@@ -4,3 +4,4 @@ module.exports = {
     Signup: require("./signup"),
     User: require("./user"),
 };
+
