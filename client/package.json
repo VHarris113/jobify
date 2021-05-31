@@ -12,7 +12,9 @@
     "jsonwebtoken": "^8.5.1",
     "npm": "^7.14.0",
     "react": "^16.13.1",
+    "react-bootstrap-date-picker": "^5.1.0",
     "react-dom": "^16.14.0",
+    "react-native-simple-radio-button": "^2.7.4",
     "react-responsive-carousel": "^3.2.18",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"

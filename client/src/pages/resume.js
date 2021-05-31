@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
-import { Image } from "cloudinary-react";
+import React, { useState } from "react";
+import { Container } from "../components/Grid";
 import Alert from "../components/Alert";
 import { Form } from "react-bootstrap";
-import { InputGroup } from "react-bootstrap";
-import { FormControl } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-export default function Upload() {
+import Gallery from "./Gallery";
+
+export default function Resume() {
   const [fileInputState, setFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState("");
   const [selectedFile, setSelectedFile] = useState();
@@ -48,7 +44,10 @@ export default function Upload() {
     try {
       const response = await fetch("/api/upload", {
         method: "POST",
-        body: JSON.stringify({ data: base64EncodedImage, userEmail: JSON.parse(localStorage.getItem("userEmail"))}),
+        body: JSON.stringify({
+          data: base64EncodedImage,
+          userEmail: localStorage.getItem("userEmail"),
+        }),
         headers: { "Content-Type": "application/json" },
       });
 
@@ -123,7 +122,7 @@ export default function Upload() {
         </tbody>
       </table>
       <h5>Sculp your resume from reviewer</h5>
-      <Form>
+      {/* <Form>
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label>
             I will recommend you to change the section bla bla "Eloy Gonzlez
@@ -131,21 +130,12 @@ export default function Upload() {
           </Form.Label>
           <Form.Control as="textarea" rows={3} />
         </Form.Group>
-      </Form>
+      </Form> */}
 
       <Button variant="primary" type="submit">
         Add Comment
       </Button>
+      <Gallery />
     </Container>
   );
 }
-// const [book, setBook] = useState({})
-
-// When this component mounts, grab the book with the _id of props.match.params.id
-// e.g. localhost:3000/books/599dcb67f0f16317844583fc
-//   const {id} = useParams()
-//   useEffect(() => {
-//     API.getBook(id)
-//       .then(res => setBook(res.data))
-//       .catch(err => console.log(err));
-//   }, [])

@@ -36,14 +36,12 @@ router.post("/upload", async (req, res) => {
     const uploadResponse = await cloudinary.uploader.upload(fileStr, {
       upload_preset: "dev_setups",
     });
-    console.log("req.body", req.body.userEmail);
 
     const userId = await User.findOne({ email: req.body.userEmail }).then(
       (dbUsers) => {
-        console.log(dbUsers);
         //return the user inside here then you are good
-        return(User)
-      } 
+        return dbUsers._id;
+      }
     );
 
     Resume.create({
@@ -53,9 +51,24 @@ router.post("/upload", async (req, res) => {
 
     res.json({ msg: "upload successful" });
   } catch (err) {
-    console.error(err);
     res.status(500).json({ err: "Something went wrong" });
-  } 
+  }
+});
+
+router.post("/resume", async (req, res) => {
+  console.log("**************",req.body);
+  //recieve information email
+  const email = req.body.email;
+  //fins user id
+  const userId = await User.findOne({ email: email }).then((dbUsers) => {
+    console.log(dbUsers);
+    return dbUsers._id;
+  });
+  //use user if to find a resume data
+  Resume.findOne({ userId: userId }).then((dbResume) => {
+    console.log("************",dbResume);
+    res.json(dbResume);
+  });
 });
 
 /********Auth*********/
