@@ -36,7 +36,7 @@
     <a href="https://github.com/VHarris113/jobify"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://shielded-coast-50433.herokuapp.com/">View Demo</a>
+    <a href="https://jobify-1.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/VHarris113/jobify/issues">Report Bug</a>
     ·
@@ -132,9 +132,7 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+Our app helps your job tracking easier.
 
 
 
