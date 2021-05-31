@@ -1,8 +1,4 @@
 const router = require("express").Router();
-<<<<<<< HEAD
-=======
-//const User = require("../models/User");
->>>>>>> eb2bebb552b009c49cc8933cbf0670844a482272
 const { cloudinary } = require("../utils/cloudinary");
 const mongoose = require("mongoose");
 const withAuth = require("../utils/withAuth");
