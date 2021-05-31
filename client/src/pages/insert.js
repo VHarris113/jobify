@@ -1,92 +1,147 @@
-import React, { Component } from "react";
-import "./style.css";
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Button} from 'react';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
-class Form extends Component {
-  // Setting the component's initial state
-  state = {
-    firstName: "",
-    lastName: "",
-    password: ""
-  };
 
-  handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    let value = event.target.value;
-    const name = event.target.name;
+ function Insert() {
+  const [state, setState] = React.useState({
+    company: "",
+      title: "",
+      location: "",
+      salary: "",
+      url: "",
+      applied: "",
+      followUp: "",
+      notes: ""
+  });
 
-    if (name === "password") {
-      value = value.substring(0, 15);
-    }
-    // Updating the input's state
-    this.setState({
-      [name]: value
+  function handleChange(evt) {
+    const value =
+      evt.target.type === "checkbox" ? evt.target.checked : evt.target.value;
+    setState({
+      ...state,
+      [evt.target.name]: value
     });
-  };
-
-  handleFormSubmit = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
-    if (!this.state.firstName || !this.state.lastName) {
-      alert("Fill out your first and last name please!");
-    } else if (this.state.password.length < 6) {
-      alert(
-        `Choose a more secure password ${this.state.firstName} ${this.state
-          .lastName}`
-      );
-    } else {
-      alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-    }
-
-    this.setState({
-      firstName: "",
-      lastName: "",
-      password: ""
-    });
-  };
-
-  render() {
-    // Notice how each input has a `value`, `name`, and `onChange` prop
-    return (
-      <div>
-        <p>
-          Hello {this.state.firstName} {this.state.lastName}
-        </p>
-        <form className="form">
-          <input
-            value={this.state.firstName}
-            name="firstName"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="First Name"
-          />
-          <input
-            value={this.state.lastName}
-            name="lastName"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="Last Name"
-          />
-          <input
-            value={this.state.password}
-            name="password"
-            onChange={this.handleInputChange}
-            type="password"
-            placeholder="Password"
-          />
-          <button onClick={this.handleFormSubmit}>Submit</button>
-        </form>
-      </div>
-    );
   }
-}
 
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    console.log('You clicked submit.');
+  }
+  
 
-// <Link to={`${props.match.url}/learn`} role="button" className="btn btn-link">
-// Learn More
-// </Link>{" "}
-// <Link to="/contact" role="button" className="btn btn-link">
-// Learn Less
-// </Link>
-// <Route exact path={`${props.match.url}/learn`} component={Learn} />
+  return (
+    
+    <div className="insert">
+      <form>
+       <div >
+      <Button onClick= {()=> setState ("Wishlist")} variant="outline-info">Wishlist</Button>{" "}
+      <Button onClick= {()=> setState ("Pending")} variant="outline-warning">Pending</Button>{" "}
+      <Button onClick= {()=> setState ("Denied")} variant="outline-danger">Denied</Button>{" "}
+      <Button onClick= {()=> setState ("Offer")} variant="outline-success">Offer</Button>{" "}  
+      </div>
+        <label>
+          <div className="heading">Company</div>
+          <input
+            type="text"
+            name="company"
+            value={state.company}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          <div className="heading">Title</div>
+          <input
+            type="text"
+            name="title"
+            value={state.title}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          <div className="heading">Location</div>
+          <input
+            type="text"
+            name="location"
+            value={state.location}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          <div className="heading">Salary</div>
+          <input
+            type="number"
+            name="salary"
+            value={state.salary}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          <div className="heading">url</div>
+          <input
+            type="link"
+            name="title"
+            value={state.url}
+            onChange={handleChange}
+          />
+          <label>
+          <div className="heading">Date</div>
+          <input
+            type="date"
+            name="appliedDate"
+            value={state.appliedDate}
+            onChange={handleChange}
+          />
+        </label>
+        </label>
 
-export default Form;
+        <label>
+          <div className="heading">Notes</div>
+          <textarea type ="text" name="notes" value={state.notes} onChange={handleChange} />
+        </label>
+        <div>
+          <div className="heading">followUp</div>
+          <label>
+            Follow Up
+            <input
+              type="radio"
+              name="option"
+              value="followUp"
+              checked={state.option === "followUp"}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            No Follow Up
+            <input
+              type="radio"
+              name="option"
+              value="noFollowUp"
+              checked={state.level === "noFollowUp"}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+       
+        <label>
+          <div className="heading">Are you interested ib a follow up?</div>
+          <input
+            type="checkbox"
+            name="followUp"
+            checked={state.Followup}
+            onChange={handleChange}
+          />
+        </label>
+      
+      
+        <Button onSubmit={handleSubmit} variant="primary" type="Submit">
+        
+
+        </Button>
+    
+     </form>
+     </div>
+  );
+  }
+  export default Insert ;
