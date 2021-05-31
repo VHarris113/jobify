@@ -1,5 +1,5 @@
 module.exports = {
-    Form: require("./form"),
+    Form: require("./Form"),
     Resume: require("./resume"),
     Signup: require("./signup"),
     User: require("./user"),
