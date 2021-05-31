@@ -15,18 +15,17 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
+<!-- [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![MIT License][license-shield]][license-url] -->
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/VHarris113/jobify">
-    <img src="images/jobify.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/VHarris113/jobify/blob/main/client/public/images/jobify.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Job tracking made easy</h3>
@@ -37,7 +36,7 @@
     <a href="https://github.com/VHarris113/jobify"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://shielded-coast-50433.herokuapp.com/">View Demo</a>
+    <a href="https://jobify-1.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/VHarris113/jobify/issues">Report Bug</a>
     ·
@@ -133,13 +132,11 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+Our app helps your job tracking easier.
 
 
 
-<!-- ROADMAP -->
+<!-- ROADMAP3 -->
 ## Roadmap
 
 See the [open issues](https://github.com/VHarris113/jobify/issues) for a list of proposed features (and known issues).
@@ -188,16 +185,4 @@ Project Link: [https://github.com/VHarris113/jobify](https://github.com/VHarris1
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/jobifypage.png
+[product-screenshot]: https://github.com/VHarris113/jobify/blob/main/client/public/images/jobifypage.png
