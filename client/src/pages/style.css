@@ -910,6 +910,13 @@ label.valid:after {
   }
 }
 @media screen and (max-width: 768px) {
+  .navbar-nav
+  {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+
   .signup-content,
   .signin-content,
   .table {
@@ -1036,7 +1043,7 @@ label.valid:after {
     margin-left: 150px;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
   
 .navbar-nav
 {
