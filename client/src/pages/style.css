@@ -910,6 +910,11 @@ label.valid:after {
   }
 }
 @media screen and (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+  }
   .signup-content,
   .signin-content,
   .table {
@@ -1036,14 +1041,12 @@ label.valid:after {
     margin-left: 150px;
   }
 }
-@media screen and (max-width: 400px) {
-  
-.navbar-nav
-{
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: baseline;
-}
+@media screen and (max-width: 425px) {
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+  }
   .social-login {
     flex-direction: column;
     -moz-flex-direction: column;
@@ -1052,13 +1055,11 @@ label.valid:after {
     -ms-flex-direction: column;
   }
 
-  .badges-space
-  {
+  .badges-space {
     margin-left: 100px;
     margin-right: 100px;
   }
 
-  
   .social-label {
     margin-right: 0px;
     margin-bottom: 10px;
@@ -1088,7 +1089,8 @@ label.valid:after {
   font-size: 20px;
   background-color: #ff1152;
 }
-h1, p {
+h1,
+p {
   font-family: Lato;
 }
 
