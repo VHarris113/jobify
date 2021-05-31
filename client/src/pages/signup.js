@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
 function SignUp() {
   const [state, setState] = useState({
     email: "",
@@ -24,8 +22,9 @@ function SignUp() {
     axios
       .post("/api/signup", state)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
+        console.log(response)
         localStorage.setItem("userEmail",state.email);
+        window.location.pathname = "/tracker";
       })
       .catch(function (error) {
         console.log(error);
