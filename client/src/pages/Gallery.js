@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Image } from "cloudinary-react";
 import axios from "axios";
 
-const Gallery = () => {
+const Gallery = ({ resumeUrl }) => {
   const [imageIds, setImageIds] = useState();
   const [resume, setResume] = useState();
   const loadImages = async () => {
@@ -19,22 +19,24 @@ const Gallery = () => {
     axios
       .post("/api/resume", { email: localStorage.getItem("userEmail") })
       .then((data) => {
-          console.log(data);
-        setResume(data.data.resumeUrl);
+        console.log(data);
+        if (data && data.data) {
+          setResume(data.data.resumeUrl);
+        }
       });
   }, []);
   return (
     <div>
       <h1 className="title">Cloudinary Gallery</h1>
       <div className="gallery">
-        <img src={resume} />
+        <img src={resumeUrl ? resumeUrl : resume} />
         {imageIds &&
           imageIds.map((imageId, index) => (
             <Image
               key={index}
               cloudName={process.env.REACT_APP_CLOUDINARY_NAME}
               publicId={imageId}
-              width="300"
+              width="100"
               crop="scale"
             />
           ))}
