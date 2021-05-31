@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const withAuth = require("../utils/withAuth");
 const jwt = require("jsonwebtoken");
 const secret = "cheesecake";
-const { Resume, User } = require("../models");t t
+const { Resume, User } = require("../models");
 //*********** Cloudinary **********/
 
 // Route for getting users from the database
