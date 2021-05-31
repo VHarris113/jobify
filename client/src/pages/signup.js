@@ -25,6 +25,7 @@ function SignUp() {
       .post("/api/signup", state)
       .then(function (response) {
         console.log(JSON.stringify(response.data));
+        localStorage.setItem("userEmail",state.email);
       })
       .catch(function (error) {
         console.log(error);
