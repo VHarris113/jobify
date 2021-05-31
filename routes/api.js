@@ -49,14 +49,16 @@ router.post("/upload", async (req, res) => {
       userId: userId,
     });
 
-    res.json({ msg: "upload successful" });
+    res.json({ 
+      msg: "upload successful",
+      resumeUrl: uploadResponse.secure_url
+  });
   } catch (err) {
     res.status(500).json({ err: "Something went wrong" });
   }
 });
 
 router.post("/resume", async (req, res) => {
-  console.log("**************",req.body);
   //recieve information email
   const email = req.body.email;
   //fins user id
@@ -66,7 +68,6 @@ router.post("/resume", async (req, res) => {
   });
   //use user if to find a resume data
   Resume.findOne({ userId: userId }).then((dbResume) => {
-    console.log("************",dbResume);
     res.json(dbResume);
   });
 });
