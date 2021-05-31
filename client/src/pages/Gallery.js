@@ -36,7 +36,7 @@ const Gallery = ({ resumeUrl }) => {
               key={index}
               cloudName={process.env.REACT_APP_CLOUDINARY_NAME}
               publicId={imageId}
-              width="100"
+              width="300"
               crop="scale"
             />
           ))}

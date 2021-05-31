@@ -1,19 +1,18 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button} from 'react';
-import 'bootstrap/dist/js/bootstrap.min.js';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "react";
+import "bootstrap/dist/js/bootstrap.min.js";
 
-
- function Insert() {
+function Insert() {
   const [state, setState] = React.useState({
     company: "",
-      title: "",
-      location: "",
-      salary: "",
-      url: "",
-      applied: "",
-      followUp: "",
-      notes: ""
+    title: "",
+    location: "",
+    salary: "",
+    url: "",
+    applied: "",
+    followUp: "",
+    notes: "",
   });
 
   function handleChange(evt) {
@@ -21,26 +20,32 @@ import 'bootstrap/dist/js/bootstrap.min.js';
       evt.target.type === "checkbox" ? evt.target.checked : evt.target.value;
     setState({
       ...state,
-      [evt.target.name]: value
+      [evt.target.name]: value,
     });
   }
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    console.log('You clicked submit.');
+    console.log("You clicked submit.");
   }
-  
 
   return (
-    
     <div className="insert">
       <form>
-       <div >
-      <Button onClick= {()=> setState ("Wishlist")} variant="outline-info">Wishlist</Button>{" "}
-      <Button onClick= {()=> setState ("Pending")} variant="outline-warning">Pending</Button>{" "}
-      <Button onClick= {()=> setState ("Denied")} variant="outline-danger">Denied</Button>{" "}
-      <Button onClick= {()=> setState ("Offer")} variant="outline-success">Offer</Button>{" "}  
-      </div>
+        <div>
+          <Button onClick={() => setState("Wishlist")} variant="outline-info">
+            Wishlist
+          </Button>{" "}
+          <Button onClick={() => setState("Pending")} variant="outline-warning">
+            Pending
+          </Button>{" "}
+          <Button onClick={() => setState("Denied")} variant="outline-danger">
+            Denied
+          </Button>{" "}
+          <Button onClick={() => setState("Offer")} variant="outline-success">
+            Offer
+          </Button>{" "}
+        </div>
         <label>
           <div className="heading">Company</div>
           <input
@@ -86,19 +91,24 @@ import 'bootstrap/dist/js/bootstrap.min.js';
             onChange={handleChange}
           />
           <label>
-          <div className="heading">Date</div>
-          <input
-            type="date"
-            name="appliedDate"
-            value={state.appliedDate}
-            onChange={handleChange}
-          />
-        </label>
+            <div className="heading">Date</div>
+            <input
+              type="date"
+              name="appliedDate"
+              value={state.appliedDate}
+              onChange={handleChange}
+            />
+          </label>
         </label>
 
         <label>
           <div className="heading">Notes</div>
-          <textarea type ="text" name="notes" value={state.notes} onChange={handleChange} />
+          <textarea
+            type="text"
+            name="notes"
+            value={state.notes}
+            onChange={handleChange}
+          />
         </label>
         <div>
           <div className="heading">followUp</div>
@@ -123,7 +133,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
             />
           </label>
         </div>
-       
+
         <label>
           <div className="heading">Are you interested ib a follow up?</div>
           <input
@@ -133,15 +143,14 @@ import 'bootstrap/dist/js/bootstrap.min.js';
             onChange={handleChange}
           />
         </label>
-      
-      
-        <Button onSubmit={handleSubmit} variant="primary" type="Submit">
-        
 
-        </Button>
-    
-     </form>
-     </div>
+        <Button
+          onSubmit={handleSubmit}
+          variant="primary"
+          type="Submit"
+        ></Button>
+      </form>
+    </div>
   );
-  }
-  export default Insert ;
+}
+export default Insert;

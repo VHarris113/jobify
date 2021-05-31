@@ -116,7 +116,7 @@ router.post("/login", function (req, res) {
           });
         } else if (!same) {
           res.status(401).json({
-            error: "Incorrect email or password",
+            error: "Incorrect password",
           });
         } else {
           // Issue token
