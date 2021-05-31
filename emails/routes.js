@@ -27,3 +27,20 @@ module.exports = function(app) {
     controller.adminBoard
   );
 };
+const proxy = require('http-proxy-middleware');
+
+// module.exports = function(app) {
+//   app.use(
+//     proxy('/api', {
+//       target: 'http://django:4000',
+//       changeOrigin: true,
+//       secure: false,
+//       pathRewrite: {
+//         '^/api': ''
+//       },
+//       onProxyReq: function (proxyReq, req, res) {
+//           proxyReq.setHeader("host", 'localhost:8000')
+//       }
+//     })
+//   )
+// }

@@ -1,151 +1,150 @@
-// import React, { useState } from "react";
-// import { Col, Row, Container } from "../components/Grid";
-// import { Form, FormGroup } from "react-bootstrap";
-// import { FormControl } from "react-bootstrap";
-// import { Button, ButtonGroup } from "react-bootstrap";
-// import axios from "axios";
-// import sendMail from "../components/cron";
-// import {DropdownButton} from "react-bootstrap";
-// import { Dropdown } from "react-bootstrap";
-// import { Component } from 'react';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Button} from 'react';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 
 
-// function Insert() {
 
-//   const [state, setState] = useState({
-//       company: "",
-//       title: "",
-//       location: "",
-//       salary: "",
-//       url: "",
-//       applied: "",
-//       followed: "",
-//       note: ""
-//   });
 
+ function Insert() {
+  const [state, setState] = React.useState({
+    company: "",
+      title: "",
+      location: "",
+      salary: "",
+      url: "",
+      applied: "",
+      followUp: "",
+      notes: ""
+  });
+
+  function handleChange(evt) {
+    const value =
+      evt.target.type === "checkbox" ? evt.target.checked : evt.target.value;
+    setState({
+      ...state,
+      [evt.target.name]: value
+    });
+  }
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    console.log('You clicked submit.');
+  }
   
- 
 
-//   const handleFormSubmit = event => {
-//     sendMail()
-//     event.preventDefault();
-//     if (!this.state.firstName || !this.state.lastName) {
-//       alert("Fill out your first and last name please!");
-//     } else if (this.state.password.length < 6) {
-//       alert(
-//         `Choose a more secure password ${this.state.firstName} ${this.state
-//           .lastName}`
-//       );
-//     } else {
-//       alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-//     }
-
-//     this.setState({
-//       firstName: "",
-//       lastName: "",
-//       password: ""
-//     });
-//   };
- 
+  return (
     
+    <div className="insert">
+      <form>
+       <div >
+      <Button onClick= {()=> setState ("Wishlist")} variant="outline-info">Wishlist</Button>{" "}
+      <Button onClick= {()=> setState ("Pending")} variant="outline-warning">Pending</Button>{" "}
+      <Button onClick= {()=> setState ("Denied")} variant="outline-danger">Denied</Button>{" "}
+      <Button onClick= {()=> setState ("Offer")} variant="outline-success">Offer</Button>{" "}  
+      </div>
+        <label>
+          <div className="heading">Company</div>
+          <input
+            type="text"
+            name="company"
+            value={state.company}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          <div className="heading">Title</div>
+          <input
+            type="text"
+            name="title"
+            value={state.title}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          <div className="heading">Location</div>
+          <input
+            type="text"
+            name="location"
+            value={state.location}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          <div className="heading">Salary</div>
+          <input
+            type="number"
+            name="salary"
+            value={state.salary}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          <div className="heading">url</div>
+          <input
+            type="link"
+            name="title"
+            value={state.url}
+            onChange={handleChange}
+          />
+          <label>
+          <div className="heading">Date</div>
+          <input
+            type="date"
+            name="appliedDate"
+            value={state.appliedDate}
+            onChange={handleChange}
+          />
+        </label>
+        </label>
 
-//   return (
-//     <Container>
-
-//        <div style={{ display: "block", width: 900, padding: 30 }}>
-//        <h4 >Select your status:</h4>
-
-//        </div>
-//        <div style={{ display: "block", width: 900, padding: 30 }}>
-//       <Button onClick= {()=> setState ("Wishlist")} variant="outline-info">Wishlist</Button>{" "}
-//       <Button onClick= {()=> setState ("Pending")} variant="outline-warning">Pending</Button>{" "}
-//       <Button onClick= {()=> setState ("Denied")} variant="outline-danger">Denied</Button>{" "}
-//       <Button onClick= {()=> setState ("Offer")} variant="outline-success">Offer</Button>{" "}
-
-//       </div>
-//       <div style={{ display: "block", width: 900, padding: 30 }}>
-//         <h4> Enter the information requested below:</h4>
-//       </div>
-//       <div style={{ display: "block", width: 950, padding: 30 }}>
-//         <Form>
-//           <Form.Group>
-//             <Form.Label></Form.Label>
-
-//             <Form.Control onChange={e => handleInputChange(e)} name = "company" type="text" placeholder="Company:" />
-//           </Form.Group>
-//           <Form.Group>
-//             <Form.Label></Form.Label>
-//             <Form.Control onChange={e => handleInputChange(e)} name = "title" type="text" placeholder="Job Title" />
-//           </Form.Group>
-//           <Form.Group>
-//             <Form.Label></Form.Label>
-//             <Form.Control onChange={e => handleInputChange(e)} name = "location " type="text" placeholder="Location" />
-//           </Form.Group>
-//           <Form.Group>
-//             <Form.Label></Form.Label>
-//             <Form.Control onChange={e => handleInputChange(e)} name = "salary" type="number" placeholder="Salary" />
-
-//           </Form.Group>
-//           <Form.Group>
-//             <Form.Label></Form.Label>
-//             <Form.Control name="url" type="link" placeholder="Listing URL" />
-//           </Form.Group>
-//           <Form.Group>
-//             <Form.Label></Form.Label>
-//             <Form.Control onChange={e => handleInputChange(e)} name = "applied" type="text" placeholder="Date Applied" />
-//           </Form.Group>
-//           <Form.Group>
-//             <Form.Label></Form.Label>
-//             <Form.Control onChange={e => handleInputChange(e)} name = "followed" type="text" placeholder="Follow Up Date" />
-
-//           </Form.Group>
-//           <Form.Group controlId="exampleForm.ControlTextarea1">
-//             <Form.Label></Form.Label>
-
-
-//             <Form.Control value ={useState.Note} name = "note" onChange={e => handleInputChange(e)} as="textarea" rows={4} placeholder="Notes" />
-
-//           </Form.Group>
-          
-          
-//           <Button variant="outline-primary" href="#/action">Follow up</Button>{' '}
-//   <Button variant="outline-secondary">No Follow up</Button>{' '}
-//   <Dropdown>
-//   <Dropdown.Toggle variant="success" id="dropdown-basic">
-//     Follow Up Frequency
-//   </Dropdown.Toggle>
-
-//   <Dropdown.Menu>
-//     <Dropdown.Item href="#/action-1">Daily</Dropdown.Item>
-//     <Dropdown.Item href="#/action-2">Weekly</Dropdown.Item>
-//     <Dropdown.Item href="#/action-3">Bi-Weekly</Dropdown.Item>
-//   </Dropdown.Menu>
-// </Dropdown>
-
-
-//       </Form>
-     
+        <label>
+          <div className="heading">Notes</div>
+          <textarea type ="text" name="notes" value={state.notes} onChange={handleChange} />
+        </label>
+        <div>
+          <div className="heading">followUp</div>
+          <label>
+            Follow Up
+            <input
+              type="radio"
+              name="option"
+              value="followUp"
+              checked={state.option === "followUp"}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            No Follow Up
+            <input
+              type="radio"
+              name="option"
+              value="noFollowUp"
+              checked={state.level === "noFollowUp"}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+       
+        <label>
+          <div className="heading">Are you interested ib a follow up?</div>
+          <input
+            type="checkbox"
+            name="followUp"
+            checked={state.Followup}
+            onChange={handleChange}
+          />
+        </label>
+      
+      
+        <Button onSubmit={handleSubmit} variant="primary" type="Submit">
         
-// <br/>
-//         <Button onClick={handleFormSubmit} variant="primary" type="submit">
-//            Submit Form
 
-//         </Button>
-//       </div>
-      
-//     </Container>
-//   );
-      
-// }
-
-
-// // <Link to={`${props.match.url}/learn`} role="button" className="btn btn-link">
-// // Learn More
-// // </Link>{" "}
-// // <Link to="/contact" role="button" className="btn btn-link">
-// // Learn Less
-// // </Link>
-// // <Route exact path={`${props.match.url}/learn`} component={Learn} />
-
-// export default Form;
+        </Button>
+    
+     </form>
+     </div>
+  );
+  }
+  export default Insert ;
