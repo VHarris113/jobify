@@ -1,15 +1,19 @@
 const router = require("express").Router();
-const User = require("../models/User");
+<<<<<<< HEAD
+=======
+//const User = require("../models/User");
+>>>>>>> eb2bebb552b009c49cc8933cbf0670844a482272
 const { cloudinary } = require("../utils/cloudinary");
 const mongoose = require("mongoose");
 const withAuth = require("../utils/withAuth");
 const jwt = require("jsonwebtoken");
 const secret = "cheesecake";
+const { Resume, User } = require("../models");
 //*********** Cloudinary **********/
 
 // Route for getting users from the database
 router.get("/user", (req, res) => {
-  User.find({_id: req.user.id})
+  User.find({ _id: req.user.id })
     .then((dbUsers) => {
       res.json(dbUsers);
       //console.log(dbUsers);
@@ -29,18 +33,46 @@ router.get("/images", async (req, res) => {
   const publicIds = resources.map((file) => file.public_id);
   res.send(publicIds);
 });
+
 router.post("/upload", async (req, res) => {
   try {
     const fileStr = req.body.data;
     const uploadResponse = await cloudinary.uploader.upload(fileStr, {
       upload_preset: "dev_setups",
     });
-    console.log(uploadResponse);
+
+    const userId = await User.findOne({ email: req.body.userEmail }).then(
+      (dbUsers) => {
+        //return the user inside here then you are good
+        return dbUsers._id;
+      }
+    );
+
+    Resume.create({
+      resumeUrl: uploadResponse.secure_url,
+      userId: userId,
+    });
+
     res.json({ msg: "upload successful" });
   } catch (err) {
-    console.error(err);
     res.status(500).json({ err: "Something went wrong" });
   }
+});
+
+router.post("/resume", async (req, res) => {
+  console.log("**************",req.body);
+  //recieve information email
+  const email = req.body.email;
+  //fins user id
+  const userId = await User.findOne({ email: email }).then((dbUsers) => {
+    console.log(dbUsers);
+    return dbUsers._id;
+  });
+  //use user if to find a resume data
+  Resume.findOne({ userId: userId }).then((dbResume) => {
+    console.log("************",dbResume);
+    res.json(dbResume);
+  });
 });
 
 /********Auth*********/
@@ -69,7 +101,7 @@ router.post("/signup", function (req, res) {
 
 router.post("/login", function (req, res) {
   const { email, password } = req.body;
-  User.findOne({ email, }, function (err, user) {
+  User.findOne({ email }, function (err, user) {
     if (err) {
       console.error(err);
       res.status(500).json({

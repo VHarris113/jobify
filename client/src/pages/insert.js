@@ -4,9 +4,6 @@ import {Button} from 'react';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
 
-
-
-
  function Insert() {
   const [state, setState] = React.useState({
     company: "",

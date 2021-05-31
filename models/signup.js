@@ -1,13 +1,8 @@
-// //sign up will have
-// //username
-// //email
-// //password
-// //profile_id
+const mongoose = require("mongoose");
+// const bcrypt = require("bcrypt");
+const Schema = mongoose.Schema;
 
-const monogoose = require("mongoose");
-const bcrypt = require("bcrypt");
-
-const SignupSchema = new monogoose.Schema({
+const signupSchema = new Schema({
     key_id: {
         type: Number,
         allowNull: false,
@@ -31,4 +26,6 @@ const SignupSchema = new monogoose.Schema({
     }
 });
 
-module.exports = SignupSchema;
+const Signup = mongoose.model("Signup", signupSchema);
+
+module.exports = Signup;
