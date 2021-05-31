@@ -1,14 +1,11 @@
 const router = require("express").Router();
-<<<<<<< HEAD
-=======
-//const User = require("../models/User");
->>>>>>> eb2bebb552b009c49cc8933cbf0670844a482272
+const User = require("../models/User");
 const { cloudinary } = require("../utils/cloudinary");
 const mongoose = require("mongoose");
 const withAuth = require("../utils/withAuth");
 const jwt = require("jsonwebtoken");
 const secret = "cheesecake";
-const { Resume, User } = require("../models");
+const { Resume, User } = require("../models");t t
 //*********** Cloudinary **********/
 
 // Route for getting users from the database
