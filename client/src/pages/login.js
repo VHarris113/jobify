@@ -36,6 +36,7 @@ function Login() {
           //do a redirect
           history.push("/tracker");
         }
+        localStorage.setItem("userEmail", state.email);
       })
       .catch(function (error) {
         console.log(error);

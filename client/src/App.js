@@ -7,7 +7,6 @@ import Dashboard from "./pages/dashboard";
 import NoMatch from "./pages/NoMatch";
 import SignUp from "./pages/signup";
 import Resume from "./pages/resume";
-import Upload from "./pages/Upload.js";
 import Gallery from "./pages/Gallery.js";
 import About from "./pages/About.js";
 import Tracker from "./pages/tracker";
