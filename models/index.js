@@ -1,6 +1,6 @@
-const User = require("./User");
-const Resume = require("./Resume");
-const Form = require("./Form");
-const Signup = require("./Signup");
-
-module.exports = { User, Resume, Form, Signup };
+module.exports = {
+    Form: require("./form"),
+    Resume: require("./resume"),
+    Signup: require("./signup"),
+    User: require("./user"),
+};
