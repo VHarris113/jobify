@@ -489,6 +489,7 @@ h2 {
 .title {
   color: black;
 }
+
 body {
   font-size: 13px;
   line-height: 1.8;
@@ -1027,23 +1028,13 @@ label.valid:after {
   #btn-sign-up {
     padding: 10px;
   }
-
-  #login-form {
-    margin-left: 150px;
-  }
-
-  #register-form {
-    margin-left: 150px;
-  }
 }
 @media screen and (max-width: 400px) {
-  
-.navbar-nav
-{
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: baseline;
-}
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+  }
   .social-login {
     flex-direction: column;
     -moz-flex-direction: column;
@@ -1052,13 +1043,11 @@ label.valid:after {
     -ms-flex-direction: column;
   }
 
-  .badges-space
-  {
+  .badges-space {
     margin-left: 100px;
     margin-right: 100px;
   }
 
-  
   .social-label {
     margin-right: 0px;
     margin-bottom: 10px;
@@ -1087,63 +1076,4 @@ label.valid:after {
   border-color: darkslategray;
   font-size: 20px;
   background-color: #ff1152;
-}
-h1, p {
-  font-family: Lato;
-}
-
-* {
-  box-sizing: border-box;
-}
-form {
-  padding: 16px;
-  border: 1px solid #ccc;
-}
-label,
-input,
-textarea,
-select {
-  display: block;
-  width: 100%;
-}
-input,
-textarea,
-select {
-  line-height: 24px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-}
-input,
-select {
-  height: 24px;
-}
-input[type="checkbox"],
-input[type="radio"] {
-  position: relative;
-  bottom: -2px;
-  display: inline-block;
-  height: 16px;
-  width: 16px;
-  margin-left: 8px;
-}
-textarea {
-  height: 48px;
-}
-pre {
-  background: #efefef;
-  padding: 16px;
-  border-radius: 4px;
-  white-space: pre-wrap;
-  overflow: hidden;
-}
-.insert {
-  width: 320px;
-  max-width: 100%;
-  margin: 32px auto;
-}
-.heading {
-  display: inline-block;
-  font-weight: bold;
-  margin: 16px 0 8px 0;
 }

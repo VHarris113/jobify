@@ -14,6 +14,7 @@ import "../src/pages/style.css";
 import Insert from "./pages/insert.js";
 import secret from "./Secret";
 
+
 //<Route exact path="/gallery" component={Gallery} />
 
 function App() {
